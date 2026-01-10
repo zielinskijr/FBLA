@@ -1,0 +1,44 @@
+name: "deploy"
+
+on:
+  push:
+    paths:
+      - "src/**"
+      - "tsconfig.json"
+      - "package.json"
+  workflow_dispatch:
+
+concurrency:
+  group: web-deploy
+  cancel-in-progress: true
+
+jobs:
+  web-deploy:
+    runs-on: host
+    container:
+      image: local-node-lftp:latest
+
+    steps:
+      - name: "download code"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: "install deps"
+        run: npm ci
+
+      - name: "build"
+        run: npm run build
+
+      - name: "ftp bs"
+        run: |
+          echo "Starting FTP deployment..."
+          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_SERVER" -e '
+            set ssl:verify-certificate no
+            mirror -R --delete --verbose --only-newer --parallel=5 public /
+            quit
+          '
+        env:
+          FTP_SERVER: ftp.jackpurrin.moe
+          FTP_USER: pet@pet.jackpurrin.moe
+          FTP_PASSWORD: ${{ secrets.ftp_password }}
