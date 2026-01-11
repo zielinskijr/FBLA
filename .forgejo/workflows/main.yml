@@ -1,4 +1,4 @@
-name: "deploy"
+name: deploy
 
 on:
   push:
@@ -14,31 +14,36 @@ concurrency:
 
 jobs:
   web-deploy:
-    runs-on: host
-    container:
-      image: local-node-lftp:latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: "download code"
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
 
-      - name: "install deps"
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
         run: npm ci
 
-      - name: "build"
+      - name: Build
         run: npm run build
 
-      - name: "ftp bs"
-        run: |
-          echo "Starting FTP deployment..."
-          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_SERVER" -e '
-            set ssl:verify-certificate no
-            mirror -R --delete --verbose --only-newer --parallel=5 public /
-            quit
-          '
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via FTP
         env:
           FTP_SERVER: ftp.jackpurrin.moe
           FTP_USER: pet@pet.jackpurrin.moe
-          FTP_PASSWORD: ${{ secrets.ftp_password }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          echo "Starting FTP deployment..."
+          lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
+          set ssl:verify-certificate no
+          mirror -R --delete --verbose --only-newer --parallel=5 public /
+          quit
+          EOF
