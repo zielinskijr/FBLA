@@ -1,3 +1,6 @@
+import { renderDom } from './render.js';
+export { state };
+
 let state;
 
 const persist = localStorage.getItem("state");
@@ -21,9 +24,15 @@ if (persist != null) {
   };
 }
 
+renderDom()
+
 function feed() {
   state.hunger += 1;
   state.mood += 1;
 
+  renderDom()
+
   localStorage.setItem("state", JSON.stringify(state));
 }
+
+window.feed = feed;
