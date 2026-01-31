@@ -29,6 +29,6 @@ function load() {
     }
 }
 
-function save() {
-    localStorage.setItem("state", JSON.stringify(state));
+function save(item) {
+    localStorage.setItem(item, JSON.stringify(state));
 }

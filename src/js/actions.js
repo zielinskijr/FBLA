@@ -7,14 +7,14 @@ function feed() {
   state.mood += 1;
 
   renderDom()
-  save()
+  save("state")
 }
 
 function play() {
     state.mood += 1;
 
     renderDom()
-    save()
+    save("state")
 }
 
 window.feed = feed;
