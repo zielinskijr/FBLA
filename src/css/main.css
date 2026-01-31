@@ -1,4 +1,17 @@
 html {
-    background-color: black;
-    color: white;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+
+hr {
+    width: 40%;
+}
+
+button {
+    color: #ffffff;
+    background-color: #3f3f3f;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
 }
