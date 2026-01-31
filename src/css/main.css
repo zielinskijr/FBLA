@@ -1,1 +1,44 @@
-/* will be implemented later */
+@import url("vars.css");
+@import url("text.css");
+
+html {
+    background-color: var(--bkg-clr);
+}
+
+main {
+    width: var(--width);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: var(--padding);
+    padding-bottom: 30px;
+    border: var(--border) dotted var(--txt-clr);
+    border-radius: var(--border-rds);
+}
+
+hr {
+    width: var(--width);
+}
+
+button {
+    background-color: var(--surface);
+    border: none;
+    padding: var(--padding);
+    border-radius: var(--border-rds);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+img {
+    max-width: 10vh;
+}
+
+input {
+    background-color: var(--surface);
+    padding: var(--padding);
+    border: none;
+    border-radius: var(--border-rds);
+}
