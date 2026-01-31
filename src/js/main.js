@@ -1,4 +1,5 @@
 import { renderDom } from './render.js';
+import { feed, play } from './actions.js'
 export { state };
 
 let state;
@@ -25,14 +26,3 @@ if (persist != null) {
 }
 
 renderDom()
-
-function feed() {
-  state.hunger += 1;
-  state.mood += 1;
-
-  renderDom()
-
-  localStorage.setItem("state", JSON.stringify(state));
-}
-
-window.feed = feed;
