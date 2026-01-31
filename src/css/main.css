@@ -38,3 +38,11 @@ button:hover {
 img {
     max-width: 10vh;
 }
+
+input {
+    background-color: #3f3f3f;
+    padding: 8px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+}
