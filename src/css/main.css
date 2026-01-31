@@ -1,33 +1,35 @@
+@import url("vars.css");
+
 html {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--bkg-clr);
+    color: var(--txt-clr);
     text-align: center;
     font-family: "Times New Roman", Times, serif;
-    font-size: 1.1rem;
+    font-size: var(--txt-size);
 }
 
 main {
-    width: 35%;
+    width: var(--width);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 10px;
+    padding: var(--padding);
     padding-bottom: 30px;
-    border: 1.5px dotted white;
-    border-radius: 15px;
+    border: var(--border) dotted var(--txt-clr);
+    border-radius: var(--border-rds);
 }
 
 hr {
-    width: 40%;
+    width: var(--width);
 }
 
 button {
-    color: #ffffff;
-    background-color: #3f3f3f;
+    color: var(--txt-clr);
+    background-color: var(--surface);
     border: none;
-    padding: 10px;
-    border-radius: 15px;
+    padding: var(--padding);
+    border-radius: var(--border-rds);
 }
 
 button:hover {
@@ -40,9 +42,9 @@ img {
 }
 
 input {
-    background-color: #3f3f3f;
-    padding: 8px;
+    background-color: var(--surface);
+    padding: var(--padding);
     border: none;
-    color: white;
-    border-radius: 15px;
+    color: var(--txt-clr);
+    border-radius: var(--border-rds);
 }
