@@ -1,0 +1,10 @@
+html {
+    color: var(--txt-clr);
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: var(--txt-size);
+}
+
+button {color: var(--txt-clr);}
+button:hover {font-size: 1.05rem;}
+input {color: var(--txt-clr);}

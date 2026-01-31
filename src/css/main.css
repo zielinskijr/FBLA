@@ -1,11 +1,8 @@
 @import url("vars.css");
+@import url("text.css");
 
 html {
     background-color: var(--bkg-clr);
-    color: var(--txt-clr);
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: var(--txt-size);
 }
 
 main {
@@ -25,7 +22,6 @@ hr {
 }
 
 button {
-    color: var(--txt-clr);
     background-color: var(--surface);
     border: none;
     padding: var(--padding);
@@ -33,7 +29,6 @@ button {
 }
 
 button:hover {
-    font-size: 1.05rem;
     cursor: pointer;
 }
 
@@ -45,6 +40,5 @@ input {
     background-color: var(--surface);
     padding: var(--padding);
     border: none;
-    color: var(--txt-clr);
     border-radius: var(--border-rds);
 }
