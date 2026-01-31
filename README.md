@@ -9,9 +9,10 @@ it's going to be mainly written in HTML, CSS, and JS.
 
 ## to-do list
 
-this fucking page is so hard to find so here it is!!
+
 
 > [!NOTE]
+> this fucking page is so hard to find so here it is!
 > https://greektrack-fbla-public.s3.amazonaws.com/files/1/High%20School%20Competitive%20Events%20Resources/Individual%20Guidelines/Presentation%20Events/Introduction-to-Programming.pdf
 
 - [x] get basic graphics working!
