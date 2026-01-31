@@ -25,12 +25,7 @@ function load() {
     if (persist != null) {
         info = JSON.parse(persist);
     } else {
-        info = {
-            type: null,
-            gender: null,
-            nick: null,
-            url: null
-        }
+        window.location.href = "/adopt.html"
     }
 }
 
