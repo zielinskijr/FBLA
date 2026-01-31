@@ -1,6 +1,6 @@
 import { renderDom } from "./render.js";
 import { feed, play } from "./actions.js";
-import { load, state } from "./data.js";
+import { load, save, state } from "./data.js";
 
 load();
 renderDom();
@@ -13,4 +13,5 @@ const main_loop = setInterval(() => {
     }
 
     renderDom();
+    save("state");
 }, 1000);
