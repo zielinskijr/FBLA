@@ -27,6 +27,15 @@ function load() {
     } else {
         window.location.href = "/adopt.html"
     }
+
+    if (info.type === "dog") {
+        info.url = "/assets/img/dog.svg";
+    } else if (info.type === "cat") {
+        info.url = "/assets/img/cat.svg";
+    } else if (info.type === "seal"){
+        info.url = "/assets/img/seal.svg";
+    }
+
 }
 
 function save(item) {
