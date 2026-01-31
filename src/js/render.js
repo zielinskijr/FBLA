@@ -8,4 +8,5 @@ export function renderDom() {
     document.getElementById("money").innerHTML = "Money: " + state.money
 
     document.getElementById("pet").src = info.url;
+    document.getElementById("name").innerHTML = info.nickname
 }
