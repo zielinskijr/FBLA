@@ -1,9 +1,10 @@
-export { state, load, save };
+export { state, info, load, save };
 
 let state;
+let info;
 
 function load() {
-    const persist = localStorage.getItem("state");
+    var persist = localStorage.getItem("state");
 
     if (persist != null) {
         state = JSON.parse(persist);
@@ -17,11 +18,19 @@ function load() {
         sick: false,
         depressed: false,
         in_bed: false,
-
-        type: null,
-        gender: null,
-        nickname: null
     };
+    }
+
+    var persist = localStorage.getItem("info");
+    if (persist != null) {
+        info = JSON.parse(persist);
+    } else {
+        info = {
+            type: null,
+            gender: null,
+            nick: null,
+            url: null
+        }
     }
 }
 

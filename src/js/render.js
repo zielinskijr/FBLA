@@ -1,4 +1,4 @@
-import { state } from './data.js'
+import { state, info } from './data.js'
 
 export function renderDom() {
     document.getElementById("time").innerHTML = "Time: " + state.time
@@ -6,4 +6,6 @@ export function renderDom() {
     document.getElementById("sleep").innerHTML = "Sleepiness: " + state.sleep
     document.getElementById("mood").innerHTML = "Happiness: " + state.mood
     document.getElementById("money").innerHTML = "Money: " + state.money
+
+    document.getElementById("pet").src = info.url;
 }
