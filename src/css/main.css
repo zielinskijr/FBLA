@@ -2,6 +2,17 @@ html {
     background-color: #121212;
     color: #ffffff;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+}
+
+main {
+    width: 35%;
+    margin: auto;
+    padding: 10px;
+    padding-bottom: 30px;
+    border: 1.5px dotted white;
+    border-radius: 15px;
 }
 
 hr {
@@ -14,4 +25,9 @@ button {
     border: none;
     padding: 10px;
     border-radius: 15px;
+}
+
+button:hover {
+    font-size: 1.05rem;
+    cursor: pointer;
 }
