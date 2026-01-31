@@ -1,22 +1,21 @@
-import { state } from './main.js'
+import { state, save } from './data.js'
 import { renderDom } from './render.js';
 export { feed, play }
-
-function play() {
-    state.mood += 1;
-
-    renderDom()
-
-    localStorage.setItem("state", JSON.stringify(state));
-}
 
 function feed() {
   state.hunger += 1;
   state.mood += 1;
 
   renderDom()
+  save()
+}
 
-  localStorage.setItem("state", JSON.stringify(state));
+function play() {
+    state.mood += 1;
+
+    renderDom()
+    save()
 }
 
 window.feed = feed;
+window.play = play;

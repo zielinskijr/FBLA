@@ -1,4 +1,4 @@
-import { state } from './main.js'
+import { state } from './data.js'
 
 export function renderDom() {
     document.getElementById("time").innerHTML = "Time: " + state.time
