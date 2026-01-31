@@ -1,20 +1,20 @@
-import { state, save } from './data.js'
-import { renderDom } from './render.js';
-export { feed, play }
+import { state, save } from "./data.js";
+import { renderDom } from "./render.js";
+export { feed, play };
 
 function feed() {
-  state.hunger += 1;
-  state.mood += 1;
+    state.hunger += 1;
+    state.mood += 1;
 
-  renderDom()
-  save("state")
+    renderDom();
+    save("state");
 }
 
 function play() {
     state.mood += 1;
 
-    renderDom()
-    save("state")
+    renderDom();
+    save("state");
 }
 
 window.feed = feed;
