@@ -16,6 +16,7 @@ function load() {
             mood: 10,
             money: 100,
             sick: false,
+            dead: false,
             depressed: false,
             in_bed: false,
         };

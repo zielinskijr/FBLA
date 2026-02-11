@@ -1,5 +1,5 @@
 import { state, save } from "./data.js";
-import { renderDom } from "./render.js";
+import { renderDom, death } from "./render.js";
 import { main_loop } from "./main.js"
 export { feed, play, try_death };
 
@@ -21,6 +21,7 @@ function play() {
 function try_death() {
     if (Math.floor(Math.random() * 4) == 2) {
         clearInterval(main_loop);
+        death()
     }
 }
 
