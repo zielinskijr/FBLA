@@ -12,11 +12,10 @@
             <h1 id="name">virtual pet</h1>
             <img id="pet" />
             <hr />
-            <h2>stats</h2>
+            <h2 id="stats">stats</h2>
             <h4 id="death" hidden>you killed {pet-name}!</h4>
             <h4 id="unhealthy" hidden>{pet-gender} is unhealthy!</h4>
             <h4 id="tired" hidden>{pet-gender} needs sleep!</h4>
-            <h4 id="depressed" hidden>{pet-gender} is depressed!</h4>
             <p id="time"></p>
             <p id="hunger"></p>
             <p id="mood"></p>
@@ -26,7 +25,7 @@
             <h2>actions</h2>
             <h3>interaction</h3>
             <button id="feedBtn" onclick="feed()">feed</button>
-            <button id="playBtn">play</button>
+            <button id="playBtn" onclick="play()">play</button>
             <br />
             <h3>send to places</h3>
             <button id="bedBtn">send to bed</button>

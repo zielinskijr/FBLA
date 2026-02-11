@@ -12,6 +12,21 @@ const main_loop = setInterval(() => {
         state.time += 1;
     }
 
+    if (state.mood > 0) {
+        if (Math.floor(Math.random() * 5) == 3) {
+            state.mood -= 1
+        }
+    } else {
+        if (!document.getElementById("depressed")) {
+            let sad = document.createElement("p");
+            sad.id = "depressed";
+            sad.innerHTML = state.gender + " is depressed!";
+            document.getElementById("stats").appendChild(sad);
+        } else {
+            death()
+        }
+    }
+    
     renderDom();
     save("state");
 }, 1000);
