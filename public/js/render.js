@@ -3,14 +3,18 @@ import { try_death } from "./actions.js";
 export { renderDom ,renderWarning }
 
 function renderDom() {
-    document.getElementById("time").innerHTML = "Time: " + state.time;
-    document.getElementById("hunger").innerHTML = "Hunger: " + state.hunger;
-    document.getElementById("sleep").innerHTML = "Sleepiness: " + state.sleep;
-    document.getElementById("mood").innerHTML = "Happiness: " + state.mood;
-    document.getElementById("money").innerHTML = "Money: " + state.money;
+    document.getElementById("main_stats").innerHTML = `
+        <p id="time">Time: ${state.time}</p>
+        <p id="hunger">Hunger: ${state.hunger}</p>
+        <p id="mood">Happiness: ${state.mood}</p>
+        <p id="sleep">Sleepiness: ${state.sleep}</p>
+        <p id="money">Money: ${state.money}</p>
+    `
 
-    document.getElementById("pet").src = info.url;
-    document.getElementById("name").innerHTML = info.nickname;
+    document.getElementById("pet").innerHTML = `
+        <h1>${info.nickname}</h1>
+        <img src="${info.url}" />
+    `
 }
 
 function renderWarning(warningID) {
