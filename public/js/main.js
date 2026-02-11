@@ -12,6 +12,23 @@ const main_loop = setInterval(() => {
         state.time += 1;
     }
 
+    if (state.hunger > 0) {
+        if (Math.floor(Math.random() * 5) == 3) {
+            state.hunger -= 1
+        }
+    } else {
+        if (!document.getElementById("hungry")) {
+            let hungry = document.createElement("p");
+            hungry.id = "hungry";
+            hungry.innerHTML = info.nickname + " is hungry!";
+            document.getElementById("stats").appendChild(hungry);
+        } else {
+            if (Math.floor(Math.random() * 4) == 2) {
+                clearInterval(main_loop);
+            }
+        }
+    }
+
     if (state.mood > 0) {
         if (Math.floor(Math.random() * 5) == 3) {
             state.mood -= 1
