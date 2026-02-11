@@ -1,6 +1,6 @@
 import { state, info } from "./data.js";
 import { try_death } from "./actions.js";
-export { renderDom, renderWarning, death }
+export { renderDom, renderWarning, removeWarning, death }
 
 function renderDom() {
     document.getElementById("main_stats").innerHTML = `
@@ -25,6 +25,12 @@ function renderWarning(warningID) {
         document.getElementById("stats").appendChild(warning);
     } else {
         try_death();
+    }
+}
+
+function removeWarning(warningID) {
+    if (document.getElementById(warningID)) {
+        document.getElementById(warningID).remove()
     }
 }
 

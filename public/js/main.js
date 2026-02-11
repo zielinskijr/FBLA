@@ -1,4 +1,4 @@
-import { renderDom, renderWarning, death } from "./render.js";
+import { renderDom, renderWarning, removeWarning, death } from "./render.js";
 import { load, save, state, info } from "./data.js";
 export { main_loop };
 
@@ -16,6 +16,7 @@ const main_loop = setInterval(() => {
         if (state.hunger < 10) {
             if (Math.floor(Math.random() * 5) == 3) {
                 state.hunger += 1
+                removeWarning("hungry")
             }
         } else {
             renderWarning("hungry")
@@ -24,6 +25,7 @@ const main_loop = setInterval(() => {
         if (state.mood > 0) {
             if (Math.floor(Math.random() * 5) == 3) {
                 state.mood -= 1
+                removeWarning("depressed")
             }
         } else {
             renderWarning("depressed")
@@ -32,6 +34,7 @@ const main_loop = setInterval(() => {
         if (state.in_bed == false) {
             if (state.sleep < 10) {
                 state.sleep += 0.25
+                removeWarning("tired")
             } else {
                 renderWarning("tired")
             }
@@ -50,5 +53,5 @@ const main_loop = setInterval(() => {
         clearInterval("main_loop");
         death();
     }
-}, 2500);
+}, 1500);
 
