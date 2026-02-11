@@ -41,6 +41,10 @@ function death() {
     warning.innerHTML = `${info.nickname} is <em>dead</em>.`;
     document.getElementById("stats").appendChild(warning);
     state.dead = true;
+
+    document.getElementById("actions").innerHTML = `
+    <a href="/adopt.html">adopt</a>
+    `
 }
 
 function remove(id) {
