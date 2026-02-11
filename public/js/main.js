@@ -50,5 +50,5 @@ const main_loop = setInterval(() => {
         clearInterval("main_loop");
         death();
     }
-}, 1000);
+}, 2500);
 
