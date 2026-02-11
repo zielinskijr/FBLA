@@ -1,5 +1,4 @@
-import { renderDom } from "./render.js";
-import { try_death } from "./actions.js";
+import { renderDom, renderWarning } from "./render.js";
 import { load, save, state, info } from "./data.js";
 export { main_loop };
 
@@ -18,14 +17,7 @@ const main_loop = setInterval(() => {
             state.hunger -= 1
         }
     } else {
-        if (!document.getElementById("hungry")) {
-            let hungry = document.createElement("p");
-            hungry.id = "hungry";
-            hungry.innerHTML = info.nickname + " is hungry!";
-            document.getElementById("stats").appendChild(hungry);
-        } else {
-            try_death()
-        }
+        renderWarning("hungry")
     }
 
     if (state.mood > 0) {
@@ -33,14 +25,7 @@ const main_loop = setInterval(() => {
             state.mood -= 1
         }
     } else {
-        if (!document.getElementById("depressed")) {
-            let sad = document.createElement("p");
-            sad.id = "depressed";
-            sad.innerHTML = info.nickname + " is depressed!";
-            document.getElementById("stats").appendChild(sad);
-        } else {
-            try_death()
-        }
+        renderWarning("depressed")
     }
 
     renderDom();
