@@ -43,7 +43,7 @@ function death() {
     state.dead = true;
 
     document.getElementById("actions").innerHTML = `
-    <a href="/adopt.html">adopt</a>
+        <button onclick="localStorage.clear(); location.reload();">adopt</button>
     `
 }
 

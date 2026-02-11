@@ -39,7 +39,7 @@ const main_loop = setInterval(() => {
         save("state");
     } else {
         clearInterval("main_loop");
+        death()
     }
 }, 1000);
 
-death()
