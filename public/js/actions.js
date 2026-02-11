@@ -1,5 +1,6 @@
 import { state, save } from "./data.js";
 import { renderDom } from "./render.js";
+import { main_loop } from "./main.js"
 export { feed, play, try_death };
 
 function feed() {

@@ -1,6 +1,7 @@
 import { renderDom } from "./render.js";
 import { try_death } from "./actions.js";
 import { load, save, state, info } from "./data.js";
+export { main_loop };
 
 load();
 renderDom();
