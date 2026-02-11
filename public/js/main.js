@@ -1,6 +1,6 @@
 import { renderDom } from "./render.js";
 import { feed, play } from "./actions.js";
-import { load, save, state } from "./data.js";
+import { load, save, state, info } from "./data.js";
 
 load();
 renderDom();
@@ -20,13 +20,15 @@ const main_loop = setInterval(() => {
         if (!document.getElementById("depressed")) {
             let sad = document.createElement("p");
             sad.id = "depressed";
-            sad.innerHTML = state.gender + " is depressed!";
+            sad.innerHTML = info.nickname + " is depressed!";
             document.getElementById("stats").appendChild(sad);
         } else {
-            death()
+            if (Math.floor(Math.random() * 4) == 2) {
+                clearInterval(main_loop);
+            }
         }
     }
-    
+
     renderDom();
     save("state");
 }, 1000);
