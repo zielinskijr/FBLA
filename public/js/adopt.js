@@ -6,7 +6,7 @@ function saveInput() {
     };
     localStorage.setItem("info", JSON.stringify(info));
 
-    if (info.type == null || info.nickname == null || info.gender == null) {
+    if (info.type == null || info.nickname == "" || info.gender == null) {
         document.getElementById("error-text").removeAttribute("hidden");
     } else {
         window.location.href = "/";
