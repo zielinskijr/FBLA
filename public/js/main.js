@@ -29,11 +29,20 @@ const main_loop = setInterval(() => {
             renderWarning("depressed")
         }
 
-        if (state.sleep < 10) {
-            state.sleep += 0.5
+        if (state.in_bed == false) {
+            if (state.sleep < 10) {
+                state.sleep += 0.25
+            } else {
+                renderWarning("tired")
+            }
         } else {
-            renderWarning("tired")
+            if (state.sleep > 0) {
+                state.sleep -= 0.5;
+            } else {
+                state.in_bed = false
+            }
         }
+
 
         renderDom();
         save("state");
