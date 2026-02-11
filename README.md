@@ -9,8 +9,6 @@ it's going to be mainly written in HTML, CSS, and JS.
 
 ## to-do list
 
-
-
 > [!NOTE]
 > this fucking page is so hard to find so here it is!
 > 
@@ -28,9 +26,3 @@ it's going to be mainly written in HTML, CSS, and JS.
 - [ ] reactions based on care level
 - [ ] a total of care related expenses
 - [ ] (optional) savings goals or earning systems
-
-## thanks!
-
-**big thanks to my girlfriend for doing the graphics!** 
-
-@MroofBoolean for helping me out!
