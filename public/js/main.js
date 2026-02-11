@@ -1,5 +1,5 @@
 import { renderDom } from "./render.js";
-import { feed, play } from "./actions.js";
+import { try_death } from "./actions.js";
 import { load, save, state, info } from "./data.js";
 
 load();
@@ -23,9 +23,7 @@ const main_loop = setInterval(() => {
             hungry.innerHTML = info.nickname + " is hungry!";
             document.getElementById("stats").appendChild(hungry);
         } else {
-            if (Math.floor(Math.random() * 4) == 2) {
-                clearInterval(main_loop);
-            }
+            try_death()
         }
     }
 
@@ -40,9 +38,7 @@ const main_loop = setInterval(() => {
             sad.innerHTML = info.nickname + " is depressed!";
             document.getElementById("stats").appendChild(sad);
         } else {
-            if (Math.floor(Math.random() * 4) == 2) {
-                clearInterval(main_loop);
-            }
+            try_death()
         }
     }
 
