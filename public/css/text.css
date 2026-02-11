@@ -5,6 +5,6 @@ html {
     font-size: var(--txt-size);
 }
 
-button {color: var(--txt-clr);}
-button:hover {font-size: 1.05rem;}
+button {color: var(--txt-clr); font-size: var(--txt-size)}
+button:hover {font-size: 0.95rem;}
 input {color: var(--txt-clr);}
