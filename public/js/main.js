@@ -13,9 +13,9 @@ const main_loop = setInterval(() => {
             state.time += 1;
         }
 
-        if (state.hunger > 0) {
+        if (state.hunger < 10) {
             if (Math.floor(Math.random() * 5) == 3) {
-                state.hunger -= 1
+                state.hunger += 1
             }
         } else {
             renderWarning("hungry")
@@ -29,8 +29,8 @@ const main_loop = setInterval(() => {
             renderWarning("depressed")
         }
 
-        if (state.sleep > 0) {
-            state.sleep -= 0.5
+        if (state.sleep < 10) {
+            state.sleep += 0.5
         } else {
             renderWarning("tired")
         }
@@ -39,7 +39,7 @@ const main_loop = setInterval(() => {
         save("state");
     } else {
         clearInterval("main_loop");
-        death()
+        death();
     }
 }, 1000);
 
