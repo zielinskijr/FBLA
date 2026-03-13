@@ -26,3 +26,4 @@ it's going to be mainly written in HTML, CSS, and JS.
 - [ ] reactions based on care level
 - [ ] a total of care related expenses
 - [ ] (optional) savings goals or earning systems
+# Trigger GitHub contributor refresh
