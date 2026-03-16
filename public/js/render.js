@@ -1,4 +1,4 @@
-import { state, info } from "./data.js";
+import { state, info, save } from "./data.js";
 import { try_death } from "./actions.js";
 export { renderDom, renderWarning, removeWarning, death }
 
@@ -20,7 +20,7 @@ function renderDom() {
 function renderWarning(warningID) {
     if (!document.getElementById(warningID)) {
         let warning = document.createElement("p");
-        warning.id = warningID; 
+        warning.id = warningID;
         warning.innerHTML = `${info.nickname} is ${warningID}!`;
         document.getElementById("stats").appendChild(warning);
     } else {
@@ -35,6 +35,9 @@ function removeWarning(warningID) {
 }
 
 function death() {
+  state.dead = true;
+    save("state");
+
     remove("hungry")
     remove("depressed")
     remove("tired")
@@ -43,7 +46,7 @@ function death() {
     document.getElementById("pet-img").src = "/assets/img/skull.svg"
 
     let warning = document.createElement("p");
-    warning.id = "death"; 
+    warning.id = "death";
     warning.innerHTML = `${info.nickname} is <em>dead</em>.`;
     document.getElementById("stats").appendChild(warning);
     state.dead = true;

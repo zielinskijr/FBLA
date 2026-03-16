@@ -2,10 +2,18 @@ import { renderDom, renderWarning, removeWarning, death } from "./render.js";
 import { load, save, state, info } from "./data.js";
 export { main_loop };
 
+let main_loop = null;
+
 load();
 renderDom();
 
+if (state.dead == true) {
+  death()
+} else {
+
+
 const main_loop = setInterval(() => {
+
     if (!state.dead == true) {
         if (state.time >= 24) {
             state.time = 0;
@@ -54,4 +62,4 @@ const main_loop = setInterval(() => {
         death();
     }
 }, 1500);
-
+}

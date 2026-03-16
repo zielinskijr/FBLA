@@ -18,6 +18,7 @@ function load() {
             dead: false,
             depressed: false,
             in_bed: false,
+            dead: false
         };
     }
 
