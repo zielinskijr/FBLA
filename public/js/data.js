@@ -29,13 +29,6 @@ function load() {
     if (persist != null) {
         info = JSON.parse(persist);
         status = "OK"
-        if (info.type === "dog") {
-            info.url = "/assets/img/dog.svg";
-        } else if (info.type === "cat") {
-            info.url = "/assets/img/cat.svg";
-        } else if (info.type === "seal") {
-            info.url = "/assets/img/seal.svg";
-        }
     } else {
         status = "ADOPT"
     }

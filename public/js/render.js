@@ -14,7 +14,7 @@ function renderDom() {
 
     document.getElementById("pet").innerHTML = `
         <h1>${info.nickname}</h1>
-        <img id="pet-img" src="${info.url}" />
+        <img id="pet-img" src="${info.type}" />
     `
 }
 
