@@ -19,6 +19,8 @@ function load() {
             sleep: 0,
             mood: 10,
             money: 100,
+            earnedMoney: 0,
+            spentMoney: 0,
             key: Math.floor(Math.random() * 10),
             dead: false,
             depressed: false,

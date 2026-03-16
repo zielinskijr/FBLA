@@ -21,6 +21,7 @@ if (state.dead == true) {
                 state.hour = 0;
                 state.day += 1;
                 state.money += 10;
+                state.earnedMoney += 10;
             } else {
                 state.hour += 1;
             }

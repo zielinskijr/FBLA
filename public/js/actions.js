@@ -7,6 +7,8 @@ function feed() {
     if (state.hunger != 0 && state.hunger > 0) {
         state.hunger -= 1;
         state.mood += 0.5;
+        state.money -= 5;
+        state.spentMoney += 5;
         removeWarning("hungry");
         if (state.hunger < 0) {
             state.hunger = 0;
@@ -20,6 +22,7 @@ function play() {
     if (state.mood != 10 && state.mood < 10) {
         state.mood += 1;
         state.money -= 5;
+        state.spentMoney += 5;
         removeWarning("depressed");
         if (state.mood > 10) {
             state.mood = 10;
@@ -40,23 +43,25 @@ function bed() {
 
 function hospital() {
     if (state.influenza == true) {
-        state.money -= Math.floor(Math.random() * 50);
+        randomMoney = Math.floor(Math.random() * 50);
+        state.money -= randomMoney
+        state.spentMoney += randomMoney
         removeWarning("sick");
     }
 }
 
 function petShow() {
     let tempStats = state
-    console.log(tempStats.hunger)
-    console.log(tempStats.hunger - 3)
-    console.log((tempStats.hunger + 3 <= 10) && (tempStats.sleep + 5 <= 10) && (tempStats.mood - 2.5 >= 1));
 
     if ((tempStats.hunger + 3 <= 10) && (tempStats.sleep + 5 <= 10) && (tempStats.mood - 2.5 >= 1)) {
         state.hunger += 3
         state.sleep += 5
         state.mood -= 2.5
 
-        state.money += Math.floor(Math.random() * 100)
+        randomMoney = Math.floor(Math.random() * 100)
+
+        state.money += randomMoney
+        state.earnedMoney = randomMoney
     }
 }
 
