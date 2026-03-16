@@ -50,7 +50,7 @@ function death() {
     document.getElementById("stats").appendChild(warning);
 
     document.getElementById("actions").innerHTML = `
-        <button onclick="localStorage.clear(); location.reload();">adopt</button>
+        <button onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>
     `
 
     state.dead = true;
