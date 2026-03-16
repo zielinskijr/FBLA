@@ -22,6 +22,7 @@ const main_loop = setInterval(() => {
     if (!state.dead == true) {
         if (state.time >= 24) {
             state.time = 0;
+            state.money += 10;
         } else {
             state.time += 1;
         }
