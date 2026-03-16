@@ -4,8 +4,13 @@ export { main_loop };
 
 let main_loop = null;
 
-load();
-renderDom();
+status = load();
+
+if (status == "OK") {
+  renderDom();
+} else {
+  window.location.href = "/adopt.html";
+}
 
 if (state.dead == true) {
   death()
