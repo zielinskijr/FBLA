@@ -4,18 +4,28 @@ import { main_loop } from "./main.js"
 export { feed, play, bed, try_death };
 
 function feed() {
+  if (state.hunger != 0 && state.hunger > 0) {
     state.hunger -= 1;
     state.mood += 0.5;
-
+    if (state.hunger < 0) {
+      state.hunger = 0
+    }
+  }
     renderDom();
     save("state");
 }
 
 function play() {
+  if (state.mood != 10 && state.mood < 10) {
     state.mood += 1;
+    state.money -= 5;
+    if (state.mood > 10) {
+      state.mood = 10
+    }
+  }
 
-    renderDom();
-    save("state");
+  renderDom();
+  save("state");
 }
 
 function bed() {
@@ -27,7 +37,7 @@ function bed() {
 }
 
 function try_death() {
-    if (Math.floor(Math.random() * 4) == 2) {
+    if (Math.floor(Math.random() * 5) == 2) {
         clearInterval(main_loop);
         death()
     }
