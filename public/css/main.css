@@ -10,7 +10,7 @@
 
     --font-family: "Google Sans", sans-serif;
     --font-size: 1.1rem;
-    --button-hover-size: 1.25rem;
+    --button-hover-size: 1.4rem;
 
     --padding-main: 20px;
     --padding-main-bottom: 50px;
@@ -21,6 +21,7 @@
     --button-shadow-width: 1.5px;
 
     --main-width: 40vh;
+    --hr-width: 20vh;
     --img-max-width: 10vh;
 }
 
@@ -46,7 +47,7 @@ main {
 }
 
 hr {
-    width: var(--width);
+    width: var(--hr-width);
 }
 
 button,
@@ -59,6 +60,7 @@ select {
     box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--accent-color);
     color: var(--text-color);
     font-size: var(--font-size);
+    transition: 0.3s;
 }
 
 button:hover {
