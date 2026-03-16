@@ -10,12 +10,11 @@
 
     --font-family: "Google Sans", sans-serif;
     --font-size: 1.1rem;
-    --font-size-small: 0.8rem;
-    --button-hover-size: 0.95rem;
+    --button-hover-size: 1.25rem;
 
     --padding-main: 20px;
     --padding-main-bottom: 50px;
-    --element-padding: 8px;
+    --element-padding: 10px;
 
     --border-width: 5px;
     --border-radius: 15px;
@@ -30,7 +29,6 @@ html {
     color: var(--text-color);
     text-align: center;
     font-family: var(--font-family);
-    font-size: var(--font-size-small);
     font-size: var(--font-size) !important;
 }
 
@@ -59,7 +57,8 @@ select {
     padding: var(--element-padding);
     border-radius: var(--border-radius);
     box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--accent-color);
-    color: var(--text-color) !important;
+    color: var(--text-color);
+    font-size: var(--font-size);
 }
 
 button:hover {
