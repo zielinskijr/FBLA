@@ -19,11 +19,12 @@ if (state.dead == true) {
 const main_loop = setInterval(() => {
 
     if (!state.dead == true) {
-        if (state.time >= 24) {
-            state.time = 0;
+        if (state.hour >= 24) {
+            state.hour = 0;
+            state.day += 1;
             state.money += 10;
         } else {
-            state.time += 1;
+            state.hour += 1;
         }
 
         if (state.hunger < 10) {

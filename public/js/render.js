@@ -5,7 +5,8 @@ export { renderDom, renderWarning, removeWarning, death }
 
 function renderDom() {
     document.getElementById("main_stats").innerHTML = `
-        <p id="time">Time: ${state.time}</p>
+        <p id="hour">Hour: ${state.hour}</p>
+        <p id="day">Day: ${state.day}</p>
         <p id="hunger">Hunger: ${state.hunger}</p>
         <p id="mood">Happiness: ${state.mood}</p>
         <p id="sleep">Sleepiness: ${state.sleep}</p>

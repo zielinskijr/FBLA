@@ -13,7 +13,8 @@ function load() {
     } else {
        status = "ADOPT"
         state = {
-            time: 7,
+            hour: 7,
+            day: 1,
             hunger: 0,
             sleep: 0,
             mood: 10,
