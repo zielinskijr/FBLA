@@ -6,26 +6,29 @@ html {
 }
 
 main {
-    width: var(--width);
+    background-color: var(--surface);
+    width: 40vh;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: var(--padding);
-    padding-bottom: 30px;
-    border: var(--border) dotted var(--txt-clr);
+    padding-bottom: 50px;
+    border: var(--border) solid var(--bdr-clr);
     border-radius: var(--border-rds);
+    box-shadow: var(--border) var(--border) var(--border) var(--bdr-clr);
 }
 
 hr {
     width: var(--width);
 }
 
-button {
-    background-color: var(--surface);
+button, input {
+    background-color: var(--button);
     border: none;
-    padding: var(--padding);
+    padding: 8px;
     border-radius: var(--border-rds);
+    box-shadow: var(--button-wdh) var(--button-wdh) var(--button-wdh) var(--accent);
 }
 
 button:hover {
@@ -34,11 +37,4 @@ button:hover {
 
 img {
     max-width: 10vh;
-}
-
-input {
-    background-color: var(--surface);
-    padding: var(--padding);
-    border: none;
-    border-radius: var(--border-rds);
 }

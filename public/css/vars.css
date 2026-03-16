@@ -1,10 +1,13 @@
 :root {
     --bkg-clr: #121212;
     --txt-clr: #ffffff;
+    --bdr-clr: #1C1C1C;
     --txt-size: 0.8rem;
-    --padding: 10px;
-    --border: 1.5px;
+    --padding: 20px;
+    --border: 5px;
     --border-rds: 15px;
-    --width: 35%;
-    --surface: #3f3f3f;
+    --surface: #1E1E1E;
+    --button: #2F2F2F;
+    --button-wdh: 1.5px;
+    --accent: #eb6f92;
 }
