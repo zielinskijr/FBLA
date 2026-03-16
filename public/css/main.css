@@ -1,21 +1,50 @@
-@import url("vars.css");
-@import url("text.css");
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+:root {
+    --bkg-color: #121212;
+    --surface-color: #1e1e1e;
+    --border-color: #1c1c1c;
+    --button-color: #2f2f2f;
+    --text-color: #ffffff;
+    --accent-color: #eb6f92;
+
+    --font-family: "Google Sans", sans-serif;
+    --font-size: 1.1rem;
+    --font-size-small: 0.8rem;
+    --button-hover-size: 0.95rem;
+
+    --padding-main: 20px;
+    --padding-main-bottom: 50px;
+    --element-padding: 8px;
+
+    --border-width: 5px;
+    --border-radius: 15px;
+    --button-shadow-width: 1.5px;
+
+    --main-width: 40vh;
+    --img-max-width: 10vh;
+}
 
 html {
-    background-color: var(--bkg-clr);
+    background-color: var(--bkg-color);
+    color: var(--text-color);
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: var(--font-size-small);
+    font-size: var(--font-size) !important;
 }
 
 main {
-    background-color: var(--surface);
-    width: 40vh;
+    background-color: var(--surface-color);
+    width: var(--main-width);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: var(--padding) var(--padding) 50px;
-    border: var(--border) solid var(--bdr-clr);
-    border-radius: var(--border-rds);
-    box-shadow: var(--border) var(--border) var(--border) var(--bdr-clr);
+    padding: var(--padding-main) var(--padding-main) var(--padding-main-bottom);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--border-width) var(--border-width) var(--border-width) var(--border-color);
 }
 
 hr {
@@ -25,16 +54,19 @@ hr {
 button,
 input,
 select {
-    background-color: var(--button);
+    background-color: var(--button-color);
     border: none;
-    padding: 8px;
-    border-radius: var(--border-rds);
-    box-shadow: var(--button-wdh) var(--button-wdh) var(--button-wdh) var(--accent);
+    padding: var(--element-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--accent-color);
+    color: var(--text-color) !important;
 }
+
 button:hover {
     cursor: pointer;
+    font-size: var(--button-hover-size);
 }
 
 img {
-    max-width: 10vh;
+    max-width: var(--img-max-width);
 }
