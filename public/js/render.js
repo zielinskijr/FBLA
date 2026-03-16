@@ -47,11 +47,12 @@ function death() {
     warning.id = "death";
     warning.innerHTML = `${info.nickname} is <em>dead</em>.`;
     document.getElementById("stats").appendChild(warning);
-    state.dead = true;
 
     document.getElementById("actions").innerHTML = `
         <button onclick="localStorage.clear(); location.reload();">adopt</button>
     `
+
+    state.dead = true;
     save("state")
 }
 
