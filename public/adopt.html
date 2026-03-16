@@ -11,25 +11,16 @@
             <h1 id="name">virtual pet</h1>
             <h2>type</h2>
 
-            <input type="radio" id="cat" name="type" value="/assets/img/cat.svg" />
-            <label for="cat">Cat</label>
+            <select name="type">
+                <option selected></option>
+                <option value="/assets/img/cat.svg">Cat</option>
+                <option value="/assets/img/dog.svg">Dog</option>
+                <option value="/assets/img/seal.svg">Seal</option>
+            </select>
 
-            <input type="radio" id="dog" name="type" value="/assets/img/dog.svg" />
-            <label for="Dog">Dog</label>
-
-            <input type="radio" id="seal" name="type" value="/assets/img/seal.svg" />
-            <label for="Seal">Seal</label>
-
-            <h2>details</h2>
-
-            <h3>name</h3>
+            <h2>name</h2>
             <input type="text" name="nickname" />
 
-            <h3>gender</h3>
-            <input type="radio" id="male" name="gender" value="male" />
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female" />
-            <label for="female">Female</label>
             <hr />
             <h4 hidden id="error-text">make sure you fill all the boxes!</h4>
             <button id="subBtn" onclick="saveInput()">submit</button>
