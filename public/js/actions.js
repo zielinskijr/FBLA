@@ -45,11 +45,26 @@ function hospital() {
     }
 }
 
+function petShow() {
+    let tempStats = state
+    console.log(tempStats.hunger)
+    console.log(tempStats.hunger - 3)
+    console.log((tempStats.hunger + 3 <= 10) && (tempStats.sleep + 5 <= 10) && (tempStats.mood - 2.5 >= 1));
+
+    if ((tempStats.hunger + 3 <= 10) && (tempStats.sleep + 5 <= 10) && (tempStats.mood - 2.5 >= 1)) {
+        state.hunger += 3
+        state.sleep += 5
+        state.mood -= 2.5
+
+        state.money += Math.floor(Math.random() * 100)
+    }
+}
+
 function try_death(doDeath) {
     if ((doDeath = true)) {
         death();
     }
-    if (Math.floor(Math.random() * 5) == 2) {
+    if (Math.floor(Math.random() * 5) == state.key) {
         clearInterval(main_loop);
         death();
     }
@@ -59,4 +74,5 @@ window.feed = feed;
 window.play = play;
 window.bed = bed;
 window.hospital = hospital;
+window.petShow = petShow
 window.try_death = try_death;
