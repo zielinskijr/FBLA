@@ -16,7 +16,6 @@ if (state.dead == true) {
   death()
 } else {
 
-
 const main_loop = setInterval(() => {
 
     if (!state.dead == true) {
@@ -36,7 +35,7 @@ const main_loop = setInterval(() => {
         }
 
         if (state.mood > 0) {
-            if (Math.floor(Math.random() * 5) == 3) {
+            if (Math.floor(Math.random() * 5) == state.key) {
                 state.mood -= 1
             }
         } else {
@@ -58,6 +57,12 @@ const main_loop = setInterval(() => {
             }
         }
 
+        if (state.influenza != true) {
+          if (Math.floor(Math.random() * 10) == state.key) {
+            state.influenza = true
+            renderWarning("sick")
+          }
+        }
 
         renderDom();
         save("state");

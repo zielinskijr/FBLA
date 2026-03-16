@@ -1,5 +1,5 @@
 import { state, save } from "./data.js";
-import { renderDom, death } from "./render.js";
+import { renderDom, death, removeWarning } from "./render.js";
 import { main_loop } from "./main.js"
 export { feed, play, bed, try_death };
 
@@ -38,6 +38,13 @@ function bed() {
     }
 }
 
+function hospital() {
+  if (state.influenza == true) {
+    state.money -= Math.floor(Math.random() * 50)
+    removeWarning("sick")
+  }
+}
+
 function try_death(doDeath) {
   if (doDeath = true) {
     death()
@@ -51,4 +58,5 @@ function try_death(doDeath) {
 window.feed = feed;
 window.play = play;
 window.bed = bed;
+window.hospital = hospital;
 window.try_death = try_death;

@@ -18,10 +18,12 @@ function load() {
             sleep: 0,
             mood: 10,
             money: 100,
+            key: Math.floor(Math.random() * 10),
             dead: false,
             depressed: false,
             in_bed: false,
-            dead: false
+            dead: false,
+            influenza: false
         };
     }
 
