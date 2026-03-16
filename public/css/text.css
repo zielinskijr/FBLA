@@ -8,6 +8,5 @@ html {
     font-size: 1.1rem !important;
 }
 
-button {color: var(--txt-clr); font-size: var(--txt-size)}
 button:hover {font-size: 0.95rem;}
-input {color: var(--txt-clr);}
+input, select, button {color: var(--txt-clr); !important}

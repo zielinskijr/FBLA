@@ -23,7 +23,7 @@ hr {
     width: var(--width);
 }
 
-button, input {
+button, input, select {
     background-color: var(--button);
     border: none;
     padding: 8px;
