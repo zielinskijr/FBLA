@@ -38,7 +38,10 @@ function bed() {
     }
 }
 
-function try_death() {
+function try_death(doDeath) {
+  if (doDeath = true) {
+    death()
+  }
     if (Math.floor(Math.random() * 5) == 2) {
         clearInterval(main_loop);
         death()
@@ -48,3 +51,4 @@ function try_death() {
 window.feed = feed;
 window.play = play;
 window.bed = bed;
+window.try_death = try_death;

@@ -56,8 +56,11 @@ const main_loop = setInterval(() => {
         renderDom();
         save("state");
     } else {
+      if (state.dead != true) {
         clearInterval("main_loop");
         death();
+        console.log(state.dead)
+      }
     }
 }, 1500);
 }

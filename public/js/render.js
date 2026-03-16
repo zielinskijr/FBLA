@@ -1,3 +1,4 @@
+import { main_loop } from "./main.js"
 import { state, info, save } from "./data.js";
 import { try_death } from "./actions.js";
 export { renderDom, renderWarning, removeWarning, death }
@@ -35,9 +36,6 @@ function removeWarning(warningID) {
 }
 
 function death() {
-  state.dead = true;
-    save("state");
-
     remove("hungry")
     remove("depressed")
     remove("tired")
@@ -54,6 +52,7 @@ function death() {
     document.getElementById("actions").innerHTML = `
         <button onclick="localStorage.clear(); location.reload();">adopt</button>
     `
+    save("state")
 }
 
 function remove(id) {
