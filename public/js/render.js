@@ -4,7 +4,7 @@ import { try_death } from "./actions.js";
 export { renderDom, renderWarning, removeWarning, death };
 
 function renderDom() {
-    document.getElementById("main_stats").innerHTML = `
+    document.getElementById("stats").innerHTML = `
         <p id="hour">Hour: ${state.hour}</p>
         <p id="day">Day: ${state.day}</p>
         <p id="hunger">Hunger: ${state.hunger}</p>
@@ -21,10 +21,10 @@ function renderDom() {
 
 function renderWarning(warningID) {
     if (!document.getElementById(warningID)) {
-        let warning = document.createElement("p");
+        let warning = document.createElement("h3");
         warning.id = warningID;
         warning.innerHTML = `${info.nickname} is ${warningID}!`;
-        document.getElementById("stats").appendChild(warning);
+        document.getElementById("warnings").appendChild(warning);
     } else {
         try_death();
     }
@@ -37,28 +37,11 @@ function removeWarning(warningID) {
 }
 
 function death() {
-    remove("hungry");
-    remove("depressed");
-    remove("tired");
-    remove("main_stats");
-
     document.getElementById("pet-img").src = "/assets/img/skull.svg";
-
-    let warning = document.createElement("p");
-    warning.id = "death";
-    warning.innerHTML = `${info.nickname} is <em>dead</em>.`;
-    document.getElementById("stats").appendChild(warning);
-
-    document.getElementById("actions").innerHTML = `
-        <button onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>
-    `;
+    document.getElementById('stats').innerHTML = "";
+    document.getElementById('warnings').innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
+    document.getElementById("actions").innerHTML = `<button onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;
 
     state.dead = true;
     save("state");
-}
-
-function remove(id) {
-    if (document.getElementById(id)) {
-        document.getElementById(id).remove();
-    }
 }
