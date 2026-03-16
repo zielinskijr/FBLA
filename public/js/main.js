@@ -62,8 +62,9 @@ if (state.dead == true) {
                     renderWarning("sick");
                 }
             }
-
-            renderDom();
+            if (state.dead != true) {
+                renderDom();
+            }
             save("state");
         }
     }, 1500);
