@@ -9,9 +9,9 @@ function load() {
 
     if (persist != null) {
         state = JSON.parse(persist);
-        status = "OK"
+        status = "OK";
     } else {
-       status = "ADOPT"
+        status = "ADOPT";
         state = {
             hour: 7,
             day: 1,
@@ -24,18 +24,18 @@ function load() {
             depressed: false,
             in_bed: false,
             dead: false,
-            influenza: false
+            influenza: false,
         };
     }
 
     var persist = localStorage.getItem("info");
     if (persist != null) {
         info = JSON.parse(persist);
-        status = "OK"
+        status = "OK";
     } else {
-        status = "ADOPT"
+        status = "ADOPT";
     }
-return status
+    return status;
 }
 
 function save(item) {

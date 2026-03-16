@@ -12,8 +12,7 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: var(--padding);
-    padding-bottom: 50px;
+    padding: var(--padding) var(--padding) 50px;
     border: var(--border) solid var(--bdr-clr);
     border-radius: var(--border-rds);
     box-shadow: var(--border) var(--border) var(--border) var(--bdr-clr);
@@ -23,14 +22,15 @@ hr {
     width: var(--width);
 }
 
-button, input, select {
+button,
+input,
+select {
     background-color: var(--button);
     border: none;
     padding: 8px;
     border-radius: var(--border-rds);
     box-shadow: var(--button-wdh) var(--button-wdh) var(--button-wdh) var(--accent);
 }
-
 button:hover {
     cursor: pointer;
 }

@@ -1,7 +1,7 @@
 function saveInput() {
     const info = {
-        type: document.querySelector('select')?.value,
-        nickname: document.querySelector('input')?.value
+        type: document.querySelector("select")?.value,
+        nickname: document.querySelector("input")?.value,
     };
     localStorage.setItem("info", JSON.stringify(info));
 
