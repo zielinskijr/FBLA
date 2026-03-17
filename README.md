@@ -27,9 +27,12 @@ it's going to be mainly written in HTML, CSS, and JS.
 - [ ] a total of care related expenses
 - [ ] (optional) savings goals or earning systems
 
-### css work!
+### whole big ass thing to work on
 
-- [ ] add shadows, tansitions, and hover effects to the buttons and inputs
-- [ ] add more contrast and visual heirarchy
-- [ ] use a sans-serif font
-- [ ] add a bit more spacey padding
+so to start, i need to add a page that explains how the game works. then, you may adopt. this should be easy! 
+
+the other part is that i want the goal to take care of the pet to be 7 days. so, we need to make sure the loop does not go past 7 days. when it reaches 7 days, we need to show some stats. like, the pet's stats, how much money you spent and earned, along with how much you currently have. 
+
+mostly what that page will be there for is money stats. in order for money stats to make more sense, i'll also need to add about two more ways to make money in this game. i think that i can find some ways but the might be difficult to make. 
+
+also, i need to finish the mood system. i want it to show me certian states via an animation applied to the pet and then also i want it to show me a little icon next the pet (like a badge) that also demonstrates if the animations aren't clear enough.

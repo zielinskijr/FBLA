@@ -60,6 +60,10 @@ main {
     box-shadow: var(--border-width) var(--border-width) var(--border-width) var(--border-color);
 }
 
+h2 {
+    color: var(--text-color) !important;
+}
+
 hr {
     width: var(--hr-width);
 }
