@@ -53,8 +53,8 @@ if (state.dead == true) {
                 if (state.sleep > 0) {
                     state.sleep -= 0.5;
                     if (state.sleep < 0) {
-                      state.sleep = 0
-                      state.in_bed = false;
+                        state.sleep = 0;
+                        state.in_bed = false;
                     }
                     removeWarning("tired");
                 } else {

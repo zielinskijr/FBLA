@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 
 :root {
     --bkg-color: #1e1c1a;
@@ -68,7 +68,9 @@ img {
     max-width: var(--img-max-width);
 }
 
-button, input, select {
+button,
+input,
+select {
     color: var(--text-color);
     font-size: var(--font-size);
     border: none;
@@ -81,7 +83,8 @@ button {
     background-color: var(--button-color);
 }
 
-input, select {
+input,
+select {
     background-color: var(--input-color);
 }
 
@@ -98,7 +101,9 @@ button:hover {
     color: var(--danger-color);
 }
 
-.feed, .play, .bed {
+.feed,
+.play,
+.bed {
     color: var(--button-font-color);
 }
 
@@ -117,7 +122,9 @@ button:hover {
     box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--bed-color);
 }
 
-.adopt, .hospital, .petShow {
+.adopt,
+.hospital,
+.petShow {
     color: var(--places-font-color);
     background-color: var(--places-color);
     box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--places-color);
@@ -133,21 +140,21 @@ button:hover {
 }
 
 @-webkit-keyframes happy {
- 0% {
-     -webkit-transform: translateX(1%);
- }
- 100% {
-     -webkit-transform: translateX(-1%);
- }
+    0% {
+        -webkit-transform: translateX(1%);
+    }
+    100% {
+        -webkit-transform: translateX(-1%);
+    }
 }
 
 @-webkit-keyframes tired {
- 0% {
-    -webkit-transform: scale(100%);
- }
- 100% {
-     -webkit-transform: scale(105%);
- }
+    0% {
+        -webkit-transform: scale(100%);
+    }
+    100% {
+        -webkit-transform: scale(105%);
+    }
 }
 
 @-webkit-keyframes sick {

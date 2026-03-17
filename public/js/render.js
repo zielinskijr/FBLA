@@ -3,7 +3,7 @@ import { state, info, save } from "./data.js";
 import { try_death } from "./actions.js";
 export { renderDom, renderPet, renderWarning, removeWarning, indicateSleep, death };
 
-const sleepButton = document.getElementById("bed")
+const sleepButton = document.getElementById("bed");
 let emoji;
 
 function renderDom() {
@@ -19,15 +19,15 @@ function renderDom() {
 }
 
 function renderPet() {
-  if (info.type == "dog") {
-    emoji = "🐶"
-  } else if (info.type == "cat") {
-    emoji = "🐱"
-  } else if (info.type == "seal") {
-    emoji = "🦭"
-  }
+    if (info.type == "dog") {
+        emoji = "🐶";
+    } else if (info.type == "cat") {
+        emoji = "🐱";
+    } else if (info.type == "seal") {
+        emoji = "🦭";
+    }
 
-  document.getElementById("pet").innerHTML = `
+    document.getElementById("pet").innerHTML = `
       <h1 id="pet">${emoji}</h1>
   `;
 }
@@ -50,20 +50,21 @@ function removeWarning(warningID) {
 }
 
 function indicateSleep(inBed) {
-  if (inBed == true) {
-    sleepButton.style.backgroundColor = 'green'
-    console.log("in bed!")
-  } else if (inBed == false) {
-    sleepButton.style.backgroundColor = '#2f2f2f'
-    console.log("not in bed!")
-  }
+    if (inBed == true) {
+        sleepButton.style.backgroundColor = "green";
+        console.log("in bed!");
+    } else if (inBed == false) {
+        sleepButton.style.backgroundColor = "#2f2f2f";
+        console.log("not in bed!");
+    }
 }
 
 function death() {
     document.getElementById("pet").innerHTML = "<h1 id='pet'>☠️</h1>";
-    document.getElementById('stats').innerHTML = "";
-    document.getElementById('warnings').innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
-    document.getElementById("actions").innerHTML = `<button class="adopt" onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;
+    document.getElementById("stats").innerHTML = "";
+    document.getElementById("warnings").innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
+    document.getElementById("actions").innerHTML =
+        `<button class="adopt" onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;
 
     state.dead = true;
     save("state");

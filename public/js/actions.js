@@ -8,7 +8,7 @@ function feed() {
         state.hunger -= 1;
         state.mood += 0.5;
         if (state.mood >= 10) {
-          state.mood = 10
+            state.mood = 10;
         }
         state.money -= 5;
         state.spentMoney += 5;
@@ -24,9 +24,9 @@ function feed() {
 function play() {
     if (state.mood != 10 && state.mood < 10) {
         state.mood += 1;
-        state.hunger += 0.5
+        state.hunger += 0.5;
         if (state.hunger <= 10) {
-          state.hunger = 10
+            state.hunger = 10;
         }
         state.money -= 5;
         state.spentMoney += 5;
@@ -43,36 +43,35 @@ function play() {
 function bed() {
     if (state.in_bed == true) {
         state.in_bed = false;
-        indicateSleep(false)
+        indicateSleep(false);
     } else {
         state.in_bed = true;
-        indicateSleep(true)
+        indicateSleep(true);
     }
 }
 
 function hospital() {
     if (state.influenza == true) {
-      let tempStats = state
-      let randomMoney = Math.floor(Math.random() * 50);
-      if (tempStats.money - randomMoney < 0)
-        state.money -= randomMoney
-        state.spentMoney += randomMoney
+        let tempStats = state;
+        let randomMoney = Math.floor(Math.random() * 50);
+        if (tempStats.money - randomMoney < 0) state.money -= randomMoney;
+        state.spentMoney += randomMoney;
         removeWarning("sick");
     }
 }
 
 function petShow() {
-    let tempStats = state
+    let tempStats = state;
 
-    if ((tempStats.hunger + 3 <= 10) && (tempStats.sleep + 5 <= 10) && (tempStats.mood - 2.5 >= 1)) {
-        state.hunger += 3
-        state.sleep += 5
-        state.mood -= 2.5
+    if (tempStats.hunger + 3 <= 10 && tempStats.sleep + 5 <= 10 && tempStats.mood - 2.5 >= 1) {
+        state.hunger += 3;
+        state.sleep += 5;
+        state.mood -= 2.5;
 
-        let randomMoney = Math.floor(Math.random() * 100)
+        let randomMoney = Math.floor(Math.random() * 100);
 
-        state.money += randomMoney
-        state.earnedMoney = randomMoney
+        state.money += randomMoney;
+        state.earnedMoney = randomMoney;
     }
 }
 
