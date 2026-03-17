@@ -47,7 +47,7 @@ function hospital() {
     if (state.influenza == true) {
       let tempStats = state
       let randomMoney = Math.floor(Math.random() * 50);
-      if (tempStat.money - randomMoney < 0)
+      if (tempStats.money - randomMoney < 0)
         state.money -= randomMoney
         state.spentMoney += randomMoney
         removeWarning("sick");
