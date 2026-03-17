@@ -182,19 +182,19 @@ button:hover {
 
 @-webkit-keyframes hungry {
     0% {
-        -webkit-transform: scale(100%);
+        -webkit-transform: scale(1);
     }
     100% {
-        -webkit-transform: scale(105%);
+        -webkit-transform: scale(1.1);
     }
 }
 
 @-webkit-keyframes sick {
     0% {
-        -webkit-transform: scaleY(100%);
+        -webkit-transform: scaleY(1);
     }
     100% {
-        -webkit-transform: scaleY(90%);
+        -webkit-transform: scaleY(0.75);
     }
 }
 
@@ -211,9 +211,9 @@ button:hover {
 
 @-webkit-keyframes depressed {
     0% {
-        -webkit-transform: translateX(0.25%);
+        -webkit-transform: translateX(0.25);
     }
     100% {
-        -webkit-transform: translateX(-0.25%);
+        -webkit-transform: translateX(-0.25);
     }
 }
