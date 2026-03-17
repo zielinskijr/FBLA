@@ -100,8 +100,7 @@ function removeWarning(warningID) {
 
 function death() {
     document.getElementById("pet").innerHTML = "<h1 id='pet'>☠️</h1>";
-    document.getElementById("stats").innerHTML = "";
-    document.getElementById("warnings").innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
+    document.getElementById("stats").innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
     document.getElementById("actions").innerHTML =
         `<button class="adopt" onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;
 

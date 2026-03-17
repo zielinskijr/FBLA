@@ -79,30 +79,26 @@ function rollDeath() {
   }
 }
 
-function handleDeath(state) {
-  if (state == "hungry") {
+function handleDeath(type) {
+  if (type == "hungry") {
     if (state.hungryTicks >= 3) {
-      console.log(state.hungryTicks)
       rollDeath()
     }
   }
-  if (state == "depressed") {
+  if (type == "depressed") {
     if (state.depressedTicks >= 3) {
-      console.log(state.depressedTicks)
       rollDeath()
     }
   }
 
-  if (state == "sleepy") {
+  if (type == "sleepy") {
     if (state.sleepyTicks >= 3) {
-      console.log(state.sleepyTicks)
       rollDeath()
     }
   }
 
-  if (state == "sick") {
+  if (type == "sick") {
     if (state.sickTicks >= 3) {
-      console.log(state.sickTicks)
       rollDeath()
     }
   }
