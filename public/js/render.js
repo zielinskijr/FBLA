@@ -1,13 +1,14 @@
 import { main_loop } from "./main.js";
 import { state, info, save } from "./data.js";
 import { try_death } from "./actions.js";
-export { renderDom, renderWarning, removeWarning, indicateSleep, death };
+export { renderDom, renderPet, renderWarning, removeWarning, indicateSleep, death };
 
 const sleepButton = document.getElementById("bed")
 let emoji;
 
 function renderDom() {
     document.getElementById("stats").innerHTML = `
+        <h2>stats</h2>
         <p id="hour">Hour: ${state.hour}</p>
         <p id="day">Day: ${state.day}</p>
         <p id="hunger">Hunger: ${state.hunger}</p>
@@ -15,19 +16,20 @@ function renderDom() {
         <p id="sleep">Sleepiness: ${state.sleep}</p>
         <p id="money">Money: ${state.money}</p>
     `;
+}
 
-    if (info.type == "dog") {
-      emoji = "🐶"
-    } else if (info.type == "cat") {
-      emoji = "🐱"
-    } else if (info.type == "seal") {
-      emoji = "🦭"
-    }
+function renderPet() {
+  if (info.type == "dog") {
+    emoji = "🐶"
+  } else if (info.type == "cat") {
+    emoji = "🐱"
+  } else if (info.type == "seal") {
+    emoji = "🦭"
+  }
 
-    document.getElementById("pet").innerHTML = `
-        <h1>${info.nickname}</h1>
-        <h2 id="pet">${emoji}</h2>
-    `;
+  document.getElementById("pet").innerHTML = `
+      <h1 id="pet">${emoji}</h1>
+  `;
 }
 
 function renderWarning(warningID) {
@@ -58,7 +60,7 @@ function indicateSleep(inBed) {
 }
 
 function death() {
-    document.getElementById("pet").innerHTML = "☠️";
+    document.getElementById("pet").innerHTML = "<h1 id='pet'>☠️</h1>";
     document.getElementById('stats').innerHTML = "";
     document.getElementById('warnings').innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
     document.getElementById("actions").innerHTML = `<button class="adopt" onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;

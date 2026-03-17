@@ -47,6 +47,10 @@ html {
     font-size: var(--font-size);
 }
 
+h1 {
+    font-size: 3rem;
+}
+
 main {
     background-color: var(--surface-color);
     width: var(--main-width);
@@ -121,4 +125,13 @@ button:hover {
     color: var(--places-font-color);
     background-color: var(--places-color);
     box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--places-color);
+}
+
+#pet {
+    animation: happy 2s linear infinite alternate;
+}
+
+@-webkit-keyframes happy {
+ 0%   { -webkit-transform: translateX(1%); }
+ 100% { -webkit-transform: translateX(-1%); }
 }

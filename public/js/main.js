@@ -1,4 +1,4 @@
-import { renderDom, renderWarning, removeWarning, death } from "./render.js";
+import { renderDom, renderPet, renderWarning, removeWarning, death } from "./render.js";
 import { load, save, state, info } from "./data.js";
 export { main_loop };
 
@@ -8,6 +8,7 @@ status = load();
 
 if (status == "OK") {
     renderDom();
+    renderPet();
 } else {
     window.location.href = "/adopt.html";
 }
