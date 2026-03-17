@@ -1,7 +1,7 @@
 import { main_loop } from "./main.js";
 import { state, info, save } from "./data.js";
 import { try_death } from "./actions.js";
-export { renderDom, renderPet, removeWarning, indicateSleep, death };
+export { renderDom, renderPet, removeWarning, death };
 
 const sleepButton = document.getElementById("bed");
 let emoji;
@@ -85,16 +85,6 @@ function renderWarning(warningID, priority) {
 function removeWarning(warningID) {
     if (document.getElementById(warningID)) {
         document.getElementById(warningID).remove();
-    }
-}
-
-function indicateSleep(inBed) {
-    if (inBed == true) {
-        sleepButton.style.backgroundColor = "green";
-        console.log("in bed!");
-    } else if (inBed == false) {
-        sleepButton.style.backgroundColor = "#2f2f2f";
-        console.log("not in bed!");
     }
 }
 

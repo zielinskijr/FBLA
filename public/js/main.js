@@ -50,13 +50,11 @@ if (state.dead == true) {
                         state.sleep = 0;
                         state.in_bed = false;
                     }
-                } else {
-                    state.in_bed = false;
                 }
             }
 
             if (state.influenza != true) {
-                if (Math.floor(Math.random() * 10) == state.key) {
+                if (Math.floor(Math.random() * 20) == state.key) {
                     state.influenza = true;
                 }
             }
