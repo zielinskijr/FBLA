@@ -3,8 +3,8 @@ import { state, info, save } from "./data.js";
 import { handleDeath } from "./actions.js"
 export { renderDom, renderPet, removeWarning, death };
 
-const sleepButton = document.getElementById("bed");
 let emoji;
+let pet;
 
 function renderDom() {
     document.getElementById("stats").innerHTML = `
@@ -20,8 +20,10 @@ function renderDom() {
 
     if (state.hunger >= 7 && !(state.hunger == 10)) {
       renderWarning("hungry", 0)
+      pet.classList.add("hungry")
     } else if (!(state.hunger == 10)) {
       removeWarning("hungry")
+      pet.classList.remove("hungry")
     } else {
       renderWarning("hungry", 1)
       state.hungry = true
@@ -32,8 +34,10 @@ function renderDom() {
 
     if (state.mood < 4 && !(state.mood == 0)) {
       renderWarning("depressed", 0)
+      pet.classList.add("depressed")
     } else if (!(state.mood == 0)) {
       removeWarning("depressed")
+      pet.classList.remove("depressed")
     } else {
       renderWarning("depressed", 1)
       state.depressed = true
@@ -43,8 +47,10 @@ function renderDom() {
 
     if (state.sleep >= 7 && !(state.sleep == 10)) {
       renderWarning("sleepy", 0)
+      pet.classList.add("tired")
     } else if (!(state.sleep == 10)) {
       removeWarning("sleepy")
+      pet.classList.remove("tired")
     } else {
       renderWarning("sleepy", 1)
       state.sleepy = true
@@ -54,10 +60,12 @@ function renderDom() {
 
     if (state.influenza == true) {
       renderWarning("sick", 1)
+      pet.classList.add("sick")
       state.sickTicks += 1
       handleDeath("sick")
     } else {
       removeWarning("sick")
+      pet.classList.remove("sick")
     }
 
     console.log(state.mood)
@@ -73,8 +81,9 @@ function renderPet() {
     }
 
     document.getElementById("pet").innerHTML = `
-      <h1 id="pet">${emoji}</h1>
+      <h1 id="pet-img">${emoji}</h1>
   `;
+    pet = document.getElementById("pet-img");
 }
 
 function renderWarning(warningID, priority) {
@@ -99,7 +108,7 @@ function removeWarning(warningID) {
 }
 
 function death() {
-    document.getElementById("pet").innerHTML = "<h1 id='pet'>☠️</h1>";
+    document.getElementById("pet").innerHTML = "<h1 id='pet-img'>☠️</h1>";
     document.getElementById("stats").innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
     document.getElementById("actions").innerHTML =
         `<button class="adopt" onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;

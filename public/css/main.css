@@ -135,11 +135,6 @@ button:hover {
     box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--places-color);
 }
 
-#pet {
-    font-size: 3rem;
-    animation: happy 2s linear infinite alternate;
-}
-
 .warning {
     color: var(--warning-color)
 }
@@ -148,8 +143,32 @@ button:hover {
     color: var(--danger-color)
 }
 
+#pet-img {
+    font-size: 3rem;
+}
+
 .dead {
     -webkit-transform: rotate(90deg);
+}
+
+.happy {
+    animation: happy 2s linear infinite alternate;
+}
+
+.hungry {
+    animation: hungry 2s linear infinite alternate;
+}
+
+.sick {
+    animation: sick 2s linear infinite alternate;
+}
+
+.tired {
+    animation: tired 2s linear infinite alternate;
+}
+
+.depressed {
+    animation: depressed 2s linear infinite alternate;
 }
 
 @-webkit-keyframes happy {
@@ -161,7 +180,7 @@ button:hover {
     }
 }
 
-@-webkit-keyframes tired {
+@-webkit-keyframes hungry {
     0% {
         -webkit-transform: scale(100%);
     }

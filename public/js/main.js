@@ -7,14 +7,15 @@ let main_loop = null;
 status = load();
 
 if (status == "OK") {
-    renderDom();
     renderPet();
+    renderDom();
 } else {
     window.location.href = "/adopt.html";
 }
 
 if (state.dead == true) {
     death();
+    pet.classList.add("dead");
 } else {
     const main_loop = setInterval(() => {
         if (!state.dead == true) {
