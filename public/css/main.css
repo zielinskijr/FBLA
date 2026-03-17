@@ -64,6 +64,11 @@ h2 {
     color: var(--text-color) !important;
 }
 
+label h4 {
+    display: inline;
+    font-size: 1.3rem;
+}
+
 hr {
     width: var(--hr-width);
 }
