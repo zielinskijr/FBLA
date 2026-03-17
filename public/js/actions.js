@@ -1,5 +1,5 @@
 import { state, save } from "./data.js";
-import { renderDom, death, removeWarning } from "./render.js";
+import { renderDom, death, removeWarning, indicateSleep } from "./render.js";
 import { main_loop } from "./main.js";
 export { feed, play, bed, try_death };
 
@@ -36,8 +36,10 @@ function play() {
 function bed() {
     if (state.in_bed == true) {
         state.in_bed = false;
+        indicateSleep(false)
     } else {
         state.in_bed = true;
+        indicateSleep(true)
     }
 }
 
