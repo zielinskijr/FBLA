@@ -7,6 +7,9 @@ function feed() {
     if (state.hunger != 0 && state.hunger > 0) {
         state.hunger -= 1;
         state.mood += 0.5;
+        if (state.mood >= 10) {
+          state.mood = 10
+        }
         state.money -= 5;
         state.spentMoney += 5;
         removeWarning("hungry");
@@ -21,6 +24,10 @@ function feed() {
 function play() {
     if (state.mood != 10 && state.mood < 10) {
         state.mood += 1;
+        state.hunger += 0.5
+        if (state.hunger <= 10) {
+          state.hunger = 10
+        }
         state.money -= 5;
         state.spentMoney += 5;
         removeWarning("depressed");
