@@ -52,7 +52,7 @@ function death() {
     document.getElementById("pet-img").src = "/assets/img/skull.svg";
     document.getElementById('stats').innerHTML = "";
     document.getElementById('warnings').innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
-    document.getElementById("actions").innerHTML = `<button onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;
+    document.getElementById("actions").innerHTML = `<button class="adopt" onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;
 
     state.dead = true;
     save("state");
