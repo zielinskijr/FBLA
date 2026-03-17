@@ -47,10 +47,6 @@ html {
     font-size: var(--font-size);
 }
 
-h1 {
-    font-size: 3rem;
-}
-
 main {
     background-color: var(--surface-color);
     width: var(--main-width);
@@ -128,10 +124,57 @@ button:hover {
 }
 
 #pet {
+    font-size: 3rem;
     animation: happy 2s linear infinite alternate;
 }
 
+.dead {
+    -webkit-transform: rotate(90deg);
+}
+
 @-webkit-keyframes happy {
- 0%   { -webkit-transform: translateX(1%); }
- 100% { -webkit-transform: translateX(-1%); }
+ 0% {
+     -webkit-transform: translateX(1%);
+ }
+ 100% {
+     -webkit-transform: translateX(-1%);
+ }
+}
+
+@-webkit-keyframes tired {
+ 0% {
+    -webkit-transform: scale(100%);
+ }
+ 100% {
+     -webkit-transform: scale(105%);
+ }
+}
+
+@-webkit-keyframes sick {
+    0% {
+        -webkit-transform: scaleY(100%);
+    }
+    100% {
+        -webkit-transform: scaleY(90%);
+    }
+}
+
+@-webkit-keyframes tired {
+    0% {
+        -webkit-transform: rotate(15deg);
+        opacity: 0.5;
+    }
+    100% {
+        -webkit-transform: rotate(15deg);
+        opacity: 0.7;
+    }
+}
+
+@-webkit-keyframes depressed {
+    0% {
+        -webkit-transform: translateX(0.25%);
+    }
+    100% {
+        -webkit-transform: translateX(-0.25%);
+    }
 }
