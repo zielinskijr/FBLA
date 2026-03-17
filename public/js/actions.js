@@ -46,6 +46,9 @@ function bed() {
     } else {
         state.in_bed = true;
     }
+
+    renderDom();
+    save("state");
 }
 
 function hospital() {
@@ -56,6 +59,9 @@ function hospital() {
         state.spentMoney += randomMoney;
         state.influenza = false
     }
+
+    renderDom();
+    save("state");
 }
 
 function petShow() {
@@ -71,6 +77,9 @@ function petShow() {
         state.money += randomMoney;
         state.earnedMoney = randomMoney;
     }
+
+    renderDom();
+    save("state");
 }
 
 function rollDeath() {
