@@ -1,7 +1,7 @@
 import { state, save } from "./data.js";
 import { renderDom, death, removeWarning } from "./render.js";
 import { main_loop } from "./main.js";
-export { feed, play, bed, try_death };
+export { feed, play, bed, handleDeath };
 
 function feed() {
     if (state.hunger != 0 && state.hunger > 0) {
@@ -73,14 +73,40 @@ function petShow() {
     }
 }
 
-function try_death(doDeath) {
-    if ((doDeath = true)) {
-        death();
+function rollDeath() {
+  if (Math.floor(Math.random() * 10) == state.key) {
+    death()
+  }
+}
+
+function handleDeath(state) {
+  if (state == "hungry") {
+    if (state.hungryTicks >= 3) {
+      console.log(state.hungryTicks)
+      rollDeath()
     }
-    if (Math.floor(Math.random() * 5) == state.key) {
-        clearInterval(main_loop);
-        death();
+  }
+  if (state == "depressed") {
+    if (state.depressedTicks >= 3) {
+      console.log(state.depressedTicks)
+      rollDeath()
     }
+  }
+
+  if (state == "sleepy") {
+    if (state.sleepyTicks >= 3) {
+      console.log(state.sleepyTicks)
+      rollDeath()
+    }
+  }
+
+  if (state == "sick") {
+    if (state.sickTicks >= 3) {
+      console.log(state.sickTicks)
+      rollDeath()
+    }
+  }
+
 }
 
 window.feed = feed;
@@ -88,4 +114,4 @@ window.play = play;
 window.bed = bed;
 window.hospital = hospital;
 window.petShow = petShow;
-window.try_death = try_death;
+window.handleDeath = handleDeath

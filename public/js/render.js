@@ -1,6 +1,6 @@
 import { main_loop } from "./main.js";
 import { state, info, save } from "./data.js";
-import { try_death } from "./actions.js";
+import { handleDeath } from "./actions.js"
 export { renderDom, renderPet, removeWarning, death };
 
 const sleepButton = document.getElementById("bed");
@@ -24,6 +24,10 @@ function renderDom() {
       removeWarning("hungry")
     } else {
       renderWarning("hungry", 1)
+      state.hungry = true
+      state.hungryTicks += 1
+      handleDeath("hungry")
+
     }
 
     if (state.mood < 4 && !(state.mood == 0)) {
@@ -32,6 +36,9 @@ function renderDom() {
       removeWarning("depressed")
     } else {
       renderWarning("depressed", 1)
+      state.depressed = true
+      state.depressedTicks += 1
+      handleDeath("depressed")
     }
 
     if (state.sleep >= 7 && !(state.sleep == 10)) {
@@ -40,10 +47,15 @@ function renderDom() {
       removeWarning("sleepy")
     } else {
       renderWarning("sleepy", 1)
+      state.sleepy = true
+      state.sleepyTicks += 1
+      handleDeath("sleepy")
     }
 
     if (state.influenza == true) {
-      renderWarning("sick")
+      renderWarning("sick", 1)
+      state.sickTicks += 1
+      handleDeath("sick")
     } else {
       removeWarning("sick")
     }
@@ -77,8 +89,6 @@ function renderWarning(warningID, priority) {
         warning.id = warningID;
         warning.innerHTML = `${info.nickname} is ${warningID}!`;
         document.getElementById("warnings").appendChild(warning);
-    } else {
-        try_death();
     }
 }
 
