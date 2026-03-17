@@ -4,6 +4,7 @@ import { try_death } from "./actions.js";
 export { renderDom, renderWarning, removeWarning, indicateSleep, death };
 
 const sleepButton = document.getElementById("bed")
+let emoji;
 
 function renderDom() {
     document.getElementById("stats").innerHTML = `
@@ -15,9 +16,17 @@ function renderDom() {
         <p id="money">Money: ${state.money}</p>
     `;
 
+    if (info.type == "dog") {
+      emoji = "🐶"
+    } else if (info.type == "cat") {
+      emoji = "🐱"
+    } else if (info.type == "seal") {
+      emoji = "🦭"
+    }
+
     document.getElementById("pet").innerHTML = `
         <h1>${info.nickname}</h1>
-        <img id="pet-img" src="${info.type}" />
+        <h2 id="pet">${emoji}</h2>
     `;
 }
 
@@ -49,7 +58,7 @@ function indicateSleep(inBed) {
 }
 
 function death() {
-    document.getElementById("pet-img").src = "/assets/img/skull.svg";
+    document.getElementById("pet").innerHTML = "☠️";
     document.getElementById('stats').innerHTML = "";
     document.getElementById('warnings').innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
     document.getElementById("actions").innerHTML = `<button class="adopt" onclick="localStorage.clear();  window.location.href = '/adopt.html';">adopt</button>`;
