@@ -75,11 +75,6 @@ function try_death(doDeath) {
     }
 }
 
-function showDebug() {
-    alert(state.spentMoney);
-    alert(state.earnedMoney);
-}
-
 window.feed = feed;
 window.play = play;
 window.bed = bed;
