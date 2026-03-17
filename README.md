@@ -15,16 +15,17 @@ it's going to be mainly written in HTML, CSS, and JS.
 > https://greektrack-fbla-public.s3.amazonaws.com/files/1/High%20School%20Competitive%20Events%20Resources/Individual%20Guidelines/Presentation%20Events/Introduction-to-Programming.pdf
 
 - [x] get basic graphics working!
-- [ ] make a "cost of care system"
+- [x] make a "cost of care system"
     - this means:
     - food and supply costs
     - vet visits or health care
     - toy or activity purchaes
     - budget limits or in-game currency
 - [x] have customization on the pet (name the pet, choose cat or dog, etc.)
-- [ ] pet care features (feed, play, rest, clean, etc.)
-- [ ] reactions based on care level
+- [x] pet care features (feed, play, rest, clean, etc.)
+- [x] reactions based on care level
 - [ ] a total of care related expenses
+- [ ] add in some cleaning to the pet
 - [ ] (optional) savings goals or earning systems
 
 ### whole big ass thing to work on
