@@ -80,5 +80,4 @@ window.play = play;
 window.bed = bed;
 window.hospital = hospital;
 window.petShow = petShow;
-window.showDebug = showDebug;
 window.try_death = try_death;
