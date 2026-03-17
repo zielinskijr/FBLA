@@ -43,7 +43,9 @@ function bed() {
 
 function hospital() {
     if (state.influenza == true) {
-        randomMoney = Math.floor(Math.random() * 50);
+      let tempStats = state
+      let randomMoney = Math.floor(Math.random() * 50);
+      if (tempStat.money - randomMoney < 0)
         state.money -= randomMoney
         state.spentMoney += randomMoney
         removeWarning("sick");
@@ -58,7 +60,7 @@ function petShow() {
         state.sleep += 5
         state.mood -= 2.5
 
-        randomMoney = Math.floor(Math.random() * 100)
+        let randomMoney = Math.floor(Math.random() * 100)
 
         state.money += randomMoney
         state.earnedMoney = randomMoney
