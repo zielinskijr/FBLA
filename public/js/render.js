@@ -1,7 +1,7 @@
 import { main_loop } from "./main.js";
 import { state, info, save } from "./data.js";
 import { try_death } from "./actions.js";
-export { renderDom, renderPet, renderWarning, removeWarning, indicateSleep, death };
+export { renderDom, renderPet, removeWarning, indicateSleep, death };
 
 const sleepButton = document.getElementById("bed");
 let emoji;
@@ -9,6 +9,7 @@ let emoji;
 function renderDom() {
     document.getElementById("stats").innerHTML = `
         <h2>stats</h2>
+        <div id="warnings"></div>
         <p id="hour">Hour: ${state.hour}</p>
         <p id="day">Day: ${state.day}</p>
         <p id="hunger">Hunger: ${state.hunger}</p>
@@ -16,6 +17,16 @@ function renderDom() {
         <p id="sleep">Sleepiness: ${state.sleep}</p>
         <p id="money">Money: ${state.money}</p>
     `;
+
+    if (state.hunger == 10) {
+        renderWarning("hungry", 0)
+    }
+    if (state.mood == 0) {
+      renderWarning("depressed", 1)
+    }
+    if (state.sleep == 10) {
+      renderWarning("sleepy", 1)
+    }
 }
 
 function renderPet() {
@@ -32,9 +43,15 @@ function renderPet() {
   `;
 }
 
-function renderWarning(warningID) {
+function renderWarning(warningID, priority) {
     if (!document.getElementById(warningID)) {
         let warning = document.createElement("h3");
+        if (priority == 0) {
+          warning.id = "warning"
+        }
+        if (priority == 1) {
+          warning.id = "danger"
+        }
         warning.id = warningID;
         warning.innerHTML = `${info.nickname} is ${warningID}!`;
         document.getElementById("warnings").appendChild(warning);

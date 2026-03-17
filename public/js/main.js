@@ -1,4 +1,4 @@
-import { renderDom, renderPet, renderWarning, removeWarning, death } from "./render.js";
+import { renderDom, renderPet, removeWarning, death } from "./render.js";
 import { load, save, state, info } from "./data.js";
 export { main_loop };
 
@@ -31,23 +31,17 @@ if (state.dead == true) {
                 if (Math.floor(Math.random() * 5) == 3) {
                     state.hunger += 1;
                 }
-            } else {
-                renderWarning("hungry");
             }
 
             if (state.mood > 0) {
                 if (Math.floor(Math.random() * 5) == state.key) {
                     state.mood -= 1;
                 }
-            } else {
-                renderWarning("depressed");
             }
 
             if (state.in_bed == false) {
                 if (state.sleep < 10) {
                     state.sleep += 0.25;
-                } else {
-                    renderWarning("tired");
                 }
             } else {
                 if (state.sleep > 0) {

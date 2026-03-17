@@ -135,6 +135,14 @@ button:hover {
     animation: happy 2s linear infinite alternate;
 }
 
+.warning {
+    color: var(--warning-color)
+}
+
+.danger {
+    color: var(--danger-color)
+}
+
 .dead {
     -webkit-transform: rotate(90deg);
 }
