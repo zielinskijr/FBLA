@@ -18,15 +18,37 @@ function renderDom() {
         <p id="money">Money: ${state.money}</p>
     `;
 
-    if (state.hunger == 10) {
-        renderWarning("hungry", 0)
+    if (state.hunger >= 7 && !(state.hunger == 10)) {
+      renderWarning("hungry", 0)
+    } else if (!(state.hunger == 10)) {
+      removeWarning("hungry")
+    } else {
+      renderWarning("hungry", 1)
     }
-    if (state.mood == 0) {
+
+    if (state.mood < 4 && !(state.mood == 0)) {
+      renderWarning("depressed", 0)
+    } else if (!(state.mood == 0)) {
+      removeWarning("depressed")
+    } else {
       renderWarning("depressed", 1)
     }
-    if (state.sleep == 10) {
+
+    if (state.sleep >= 7 && !(state.sleep == 10)) {
+      renderWarning("sleepy", 0)
+    } else if (!(state.sleep == 10)) {
+      removeWarning("sleepy")
+    } else {
       renderWarning("sleepy", 1)
     }
+
+    if (state.influenza == true) {
+      renderWarning("sick")
+    } else {
+      removeWarning("sick")
+    }
+
+    console.log(state.mood)
 }
 
 function renderPet() {
@@ -47,10 +69,10 @@ function renderWarning(warningID, priority) {
     if (!document.getElementById(warningID)) {
         let warning = document.createElement("h3");
         if (priority == 0) {
-          warning.id = "warning"
+          warning.className = "warning"
         }
         if (priority == 1) {
-          warning.id = "danger"
+          warning.className = "danger"
         }
         warning.id = warningID;
         warning.innerHTML = `${info.nickname} is ${warningID}!`;

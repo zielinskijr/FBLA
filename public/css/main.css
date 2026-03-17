@@ -97,10 +97,6 @@ button:hover {
     color: var(--text-muted);
 }
 
-#warnings {
-    color: var(--danger-color);
-}
-
 .feed,
 .play,
 .bed {

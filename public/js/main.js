@@ -50,7 +50,6 @@ if (state.dead == true) {
                         state.sleep = 0;
                         state.in_bed = false;
                     }
-                    removeWarning("tired");
                 } else {
                     state.in_bed = false;
                 }
@@ -59,7 +58,6 @@ if (state.dead == true) {
             if (state.influenza != true) {
                 if (Math.floor(Math.random() * 10) == state.key) {
                     state.influenza = true;
-                    renderWarning("sick");
                 }
             }
             if (state.dead != true) {
