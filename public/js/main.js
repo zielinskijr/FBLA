@@ -1,3 +1,4 @@
+import { feed, play, bed, hospital, petShow } from "./actions.js"
 import { renderDom, renderPet } from "./render.js";
 import { load, save, state } from "./data.js";
 import { death } from "./death.js"

@@ -1,5 +1,5 @@
 import { state, save } from "./data.js";
-import { renderDom, removeWarning } from "./render.js";
+import { renderDom } from "./render.js";
 export { feed, play, bed, hospital, petShow };
 
 function feed() {
