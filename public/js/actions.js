@@ -90,24 +90,24 @@ function rollDeath() {
 
 function handleDeath(type) {
   if (type == "hungry") {
-    if (state.hungryTicks >= 3) {
+    if (state.hungryTicks >= 5) {
       rollDeath()
     }
   }
   if (type == "depressed") {
-    if (state.depressedTicks >= 3) {
+    if (state.depressedTicks >= 5) {
       rollDeath()
     }
   }
 
   if (type == "sleepy") {
-    if (state.sleepyTicks >= 3) {
+    if (state.sleepyTicks >= 5) {
       rollDeath()
     }
   }
 
   if (type == "sick") {
-    if (state.sickTicks >= 3) {
+    if (state.sickTicks >= 5) {
       rollDeath()
     }
   }

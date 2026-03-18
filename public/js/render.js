@@ -24,6 +24,7 @@ function renderDom() {
     } else if (!(state.hunger == 10)) {
       removeWarning("hungry")
       pet.classList.remove("hungry")
+      state.hungryTicks = 0
     } else {
       renderWarning("hungry", 1)
       state.hungry = true
@@ -38,6 +39,7 @@ function renderDom() {
     } else if (!(state.mood == 0)) {
       removeWarning("depressed")
       pet.classList.remove("depressed")
+      state.depressedTicks = 0
     } else {
       renderWarning("depressed", 1)
       state.depressed = true
@@ -51,6 +53,7 @@ function renderDom() {
     } else if (!(state.sleep == 10)) {
       removeWarning("sleepy")
       pet.classList.remove("tired")
+      state.sleepyTicks = 0
     } else {
       renderWarning("sleepy", 1)
       state.sleepy = true
@@ -66,9 +69,9 @@ function renderDom() {
     } else {
       removeWarning("sick")
       pet.classList.remove("sick")
+      state.sickTicks = 0
     }
 
-    console.log(state.mood)
 }
 
 function renderPet() {
