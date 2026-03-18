@@ -53,48 +53,47 @@ function handleTicks() {
 function handleWarnings() {
   pet = document.getElementById("pet-img");
 
-  if (state.hunger >= 7 && !(state.hunger == 10)) {
-    renderWarning("hungry", 0)
+
+  if (state.hunger == 10) {
     pet.classList.add("hungry")
-  } else if (!(state.hunger == 10)) {
+    state.hungryTicks += 1
+    renderWarning("hungry", 1)
+    handleDeath("hungry")
+  } else if (state.hunger >= 7) {
+    pet.classList.add("hungry")
+    renderWarning("hungry", 0)
+  } else {
     removeWarning("hungry")
     pet.classList.remove("hungry")
     state.hungryTicks = 0
-  } else {
-    renderWarning("hungry", 1)
-    state.hungry = true
-    state.hungryTicks += 1
-    handleDeath("hungry")
   }
 
-  if (state.mood < 4 && !(state.mood == 0)) {
+  if (state.sleep == 10) {
+    renderWarning("sleepy", 1)
+    state.sleepyTicks += 1
+    handleDeath("sleepy")
+  } if (state.sleep >= 7) {
+    renderWarning("sleepy", 0)
+    pet.classList.add("tired")
+  } else {
+    removeWarning("sleepy")
+    pet.classList.remove("tired")
+    state.sleepyTicks = 0
+  }
+
+  if (state.mood == 0) {
+    renderWarning("depressed", 1)
+    state.depressedTicks += 1
+    handleDeath("depressed")
+  } else if (state.mood <= 3) {
     renderWarning("depressed", 0)
-    pet.classList.add("depressed")
     pet.classList.remove("happy")
-  } else if (!(state.mood == 0)) {
+    pet.classList.add("depressed")
+  } else {
     removeWarning("depressed")
     pet.classList.remove("depressed")
     pet.classList.add("happy")
     state.depressedTicks = 0
-  } else {
-    renderWarning("depressed", 1)
-    state.depressed = true
-    state.depressedTicks += 1
-    handleDeath("depressed")
-  }
-
-  if (state.sleep >= 7 && !(state.sleep == 10)) {
-    renderWarning("sleepy", 0)
-    pet.classList.add("tired")
-  } else if (!(state.sleep == 10)) {
-    removeWarning("sleepy")
-    pet.classList.remove("tired")
-    state.sleepyTicks = 0
-  } else {
-    renderWarning("sleepy", 1)
-    state.sleepy = true
-    state.sleepyTicks += 1
-    handleDeath("sleepy")
   }
 
   if (state.influenza == true) {

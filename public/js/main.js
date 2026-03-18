@@ -3,8 +3,10 @@ import { handleTicks, handleWarnings } from "./logic.js"
 import { renderDom, renderPet } from "./render.js";
 import { load, save, state } from "./data.js";
 import { death } from "./death.js"
+export { mainLoop }
 
 let status = load();
+let mainLoop;
 
 if (status == "OK") {
     renderPet();
@@ -15,7 +17,7 @@ if (status == "OK") {
 }
 
 if (state.dead == false) {
-   const mainLoop = setInterval(() => {
+    mainLoop = setInterval(() => {
      handleTicks()
      handleWarnings()
 
@@ -25,4 +27,4 @@ if (state.dead == false) {
    }, 1500);
  } else {
    death();
- }
+}

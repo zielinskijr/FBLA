@@ -8,7 +8,6 @@ let pet;
 function renderDom() {
     document.getElementById("stats").innerHTML = `
         <h2>stats</h2>
-        <div id="warnings"></div>
         <p id="hour">Hour: ${state.hour}</p>
         <p id="day">Day: ${state.day}</p>
         <p id="hunger">Hunger: ${state.hunger}</p>
@@ -16,7 +15,6 @@ function renderDom() {
         <p id="sleep">Sleepiness: ${state.sleep}</p>
         <p id="money">Money: ${state.money}</p>
     `;
-
 }
 
 function renderPet() {
@@ -34,18 +32,17 @@ function renderPet() {
 }
 
 function renderWarning(warningID, priority) {
-    if (!document.getElementById(warningID)) {
-        let warning = document.createElement("h3");
-        if (priority == 0) {
-          warning.className = "warning"
-        }
-        if (priority == 1) {
-          warning.className = "danger"
-        }
-        warning.id = warningID;
-        warning.innerHTML = `${info.nickname} is ${warningID}!`;
-        document.getElementById("warnings").appendChild(warning);
-    }
+      removeWarning(warningID)
+      let warning = document.createElement("h3");
+      if (priority == 0) {
+        warning.className = "warning"
+      }
+      if (priority == 1) {
+        warning.className = "danger"
+      }
+      warning.id = warningID;
+      warning.innerHTML = `${info.nickname} is ${warningID}!`;
+      document.getElementById("warnings").appendChild(warning);
 }
 
 function removeWarning(warningID) {

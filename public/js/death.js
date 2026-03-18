@@ -1,8 +1,9 @@
-import { state, save } from "./data.js";
-import { info } from "./data.js";
+import { state, save, info } from "./data.js";
+import { mainLoop } from "./main.js";
 export { handleDeath, death, rollDeath };
 
 function death() {
+    clearInterval(mainLoop)
     document.getElementById("pet").innerHTML = "<h1 id='pet-img'>☠️</h1>";
     document.getElementById("stats").innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
     document.getElementById("actions").innerHTML =
