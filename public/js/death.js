@@ -8,7 +8,7 @@ function death() {
     document.getElementById("pet").innerHTML = "<h1 id='pet-img'>☠️</h1>";
     document.getElementById("stats").innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
     document.getElementById("actions").innerHTML =
-        `<a class="adopt" href="/adopt.html" onclick="localStorage.clear()">adopt</a>`;
+        `<button class="adopt" onclick="localStorage.clear(); window.location.href='/adopt.html'">adopt</button>`;
     pet.classList.add("dead")
     state.dead = true;
     save("state");
