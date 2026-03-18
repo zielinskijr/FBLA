@@ -1,5 +1,6 @@
-import { state } from "./data.js"
 import { renderWarning, removeWarning } from "./render.js"
+import { handleDeath } from "./death.js"
+import { state } from "./data.js"
 export { handleTicks, handleWarnings }
 
 let pet;
@@ -33,7 +34,7 @@ function handleTicks() {
           }
       } else {
           if (state.sleep > 0) {
-              state.sleep -= 0.5;
+              state.sleep -= 0.75;
               if (state.sleep < 0) {
                   state.sleep = 0;
                   state.in_bed = false;
