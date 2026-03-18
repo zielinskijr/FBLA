@@ -48,15 +48,18 @@ html {
     font-size: var(--font-size);
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 main {
     background-color: var(--surface-color);
     width: var(--main-width);
-    max-height: var(--main-height);
-    overflow: scroll;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: var(--main-height);
+    overflow: auto;
     padding: var(--padding-main) var(--padding-main) var(--padding-main-bottom);
     border: var(--border-width) solid var(--border-color);
     border-radius: var(--border-radius);

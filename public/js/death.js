@@ -1,5 +1,6 @@
 import { state, save, info } from "./data.js";
 import { mainLoop } from "./main.js";
+import { pet } from "./logic.js"
 export { handleDeath, death, rollDeath };
 
 function death() {
@@ -7,7 +8,7 @@ function death() {
     document.getElementById("pet").innerHTML = "<h1 id='pet-img'>☠️</h1>";
     document.getElementById("stats").innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
     document.getElementById("actions").innerHTML =
-        `<button class="adopt" onclick="localStorage.clear(); window.location.href = '/adopt.html';">adopt</button>`;
+        `<a class="adopt" href="/adopt.html" onclick="localStorage.clear()">adopt</a>`;
     pet.classList.add("dead")
     state.dead = true;
     save("state");

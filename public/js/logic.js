@@ -1,7 +1,7 @@
 import { renderWarning, removeWarning } from "./render.js"
 import { handleDeath } from "./death.js"
 import { state } from "./data.js"
-export { handleTicks, handleWarnings }
+export { handleTicks, handleWarnings, pet }
 
 let pet;
 
