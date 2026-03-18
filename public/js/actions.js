@@ -1,7 +1,6 @@
 import { state, save } from "./data.js";
-import { renderDom, death, removeWarning } from "./render.js";
-import { main_loop } from "./main.js";
-export { feed, play, bed, handleDeath };
+import { renderDom, removeWarning } from "./render.js";
+export { feed, play, bed, hospital, petShow };
 
 function feed() {
     if (state.hunger != 0 && state.hunger > 0) {
@@ -12,7 +11,7 @@ function feed() {
         }
         state.money -= 5;
         state.spentMoney += 5;
-        removeWarning("hungry");
+
         if (state.hunger < 0) {
             state.hunger = 0;
         }
@@ -30,7 +29,7 @@ function play() {
         }
         state.money -= 5;
         state.spentMoney += 5;
-        removeWarning("depressed");
+
         if (state.mood > 10) {
             state.mood = 10;
         }
@@ -82,41 +81,8 @@ function petShow() {
     save("state");
 }
 
-function rollDeath() {
-  if (Math.floor(Math.random() * 10) == state.key) {
-    death()
-  }
-}
-
-function handleDeath(type) {
-  if (type == "hungry") {
-    if (state.hungryTicks >= 5) {
-      rollDeath()
-    }
-  }
-  if (type == "depressed") {
-    if (state.depressedTicks >= 5) {
-      rollDeath()
-    }
-  }
-
-  if (type == "sleepy") {
-    if (state.sleepyTicks >= 5) {
-      rollDeath()
-    }
-  }
-
-  if (type == "sick") {
-    if (state.sickTicks >= 5) {
-      rollDeath()
-    }
-  }
-
-}
-
 window.feed = feed;
 window.play = play;
 window.bed = bed;
 window.hospital = hospital;
 window.petShow = petShow;
-window.handleDeath = handleDeath

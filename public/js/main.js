@@ -1,10 +1,9 @@
-import { renderDom, renderPet, removeWarning, death } from "./render.js";
-import { load, save, state, info } from "./data.js";
-export { main_loop };
+import { renderDom, renderPet } from "./render.js";
+import { load, save, state } from "./data.js";
+import { death } from "./death.js"
 
 let main_loop = null;
-
-status = load();
+let status = load();
 
 if (status == "OK") {
     renderPet();
