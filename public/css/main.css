@@ -34,7 +34,8 @@
     --border-width: 5px;
     --border-radius: 15px;
 
-    --main-width: 20vw;
+    --main-width: 30vw;
+    --main-height: 50%;
     --hr-width: 20vh;
     --img-max-width: 10vh;
 }
@@ -50,6 +51,8 @@ html {
 main {
     background-color: var(--surface-color);
     width: var(--main-width);
+    max-height: var(--main-height);
+    overflow: scroll;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -58,6 +61,12 @@ main {
     border: var(--border-width) solid var(--border-color);
     border-radius: var(--border-radius);
     box-shadow: var(--border-width) var(--border-width) var(--border-width) var(--border-color);
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 h2 {

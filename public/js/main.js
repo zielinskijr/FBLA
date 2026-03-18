@@ -10,7 +10,7 @@ if (status == "OK") {
     renderPet();
     renderDom();
 } else {
-    window.location.href = "/adopt.html";
+    window.location.href = "/tutorial.html";
 }
 
 if (state.dead == true) {
