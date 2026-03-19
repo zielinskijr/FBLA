@@ -3,36 +3,27 @@ import { renderDom } from "./render.js";
 export { feed, play, bed, hospital, petShow };
 
 function feed() {
-    if (state.hunger != 0 && state.hunger > 0) {
+  if (!(state.hunger <= 0)) {
+      if (state.money - 5 > 0) {
         state.hunger -= 1;
-        state.mood += 0.5;
-        if (state.mood >= 10) {
-            state.mood = 10;
+        if (state.mood + 0.5 <= 10) {
+            state.mood += 0.5;
         }
         state.money -= 5;
         state.spentMoney += 5;
-
-        if (state.hunger < 0) {
-            state.hunger = 0;
-        }
+      }
     }
     renderDom();
     save("state");
 }
 
 function play() {
-    if (state.mood != 10 && state.mood < 10) {
+    if (state.mood < 10) {
+      if (state.money - 5 > 0) {
         state.mood += 1;
-        state.hunger += 0.5;
-        if (state.hunger <= 10) {
-            state.hunger = 10;
-        }
         state.money -= 5;
         state.spentMoney += 5;
-
-        if (state.mood > 10) {
-            state.mood = 10;
-        }
+      }
     }
 
     renderDom();
