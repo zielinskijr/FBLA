@@ -54,9 +54,11 @@ function hospital() {
     if (state.influenza == true) {
         let tempStats = state;
         let randomMoney = Math.floor(Math.random() * 50);
-        if (tempStats.money - randomMoney < 0) state.money -= randomMoney;
-        state.spentMoney += randomMoney;
-        state.influenza = false
+        if (tempStats.money - randomMoney > 0)  {
+          state.money -= randomMoney;
+          state.spentMoney += randomMoney;
+          state.influenza = false
+        }
     }
 
     renderDom();
