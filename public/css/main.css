@@ -18,6 +18,7 @@
 
     --feed-color: #c97a6e;
     --play-color: #c4855a;
+    --clean-color: #7aab8a;
     --bed-color: #8a9ea8;
 
     --places-color: #4a5a4e;
@@ -120,7 +121,8 @@ button:hover {
 
 .feed,
 .play,
-.bed {
+.bed,
+.clean {
     color: var(--button-font-color);
 }
 
@@ -137,6 +139,11 @@ button:hover {
 .bed {
     background-color: var(--bed-color);
     box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--bed-color);
+}
+
+.clean {
+    background-color: var(--clean-color);
+    box-shadow: var(--button-shadow-width) var(--button-shadow-width) var(--button-shadow-width) var(--clean-color);
 }
 
 .adopt,

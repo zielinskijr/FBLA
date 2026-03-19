@@ -32,6 +32,18 @@ function play() {
     save("state");
 }
 
+function clean() {
+  if (state.clean == false) {
+    if (state.happiness - 3 > 0) {
+      state.clean = true
+      state.happiness += 2
+    }
+
+    renderDom();
+    save("state");
+  }
+}
+
 function bed() {
     if (state.in_bed == true) {
         state.in_bed = false;
@@ -82,5 +94,6 @@ function petShow() {
 window.feed = feed;
 window.play = play;
 window.bed = bed;
+window.clean = clean;
 window.hospital = hospital;
 window.petShow = petShow;

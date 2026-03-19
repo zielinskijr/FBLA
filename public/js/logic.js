@@ -47,6 +47,12 @@ function handleTicks() {
               state.influenza = true;
           }
       }
+
+      if (state.clean == true) {
+        if (Math.floor(Math.random() * 20) == state.key) {
+          state.clean == false
+        }
+      }
 }
 }
 
@@ -98,6 +104,16 @@ function handleWarnings() {
     pet.classList.add("happy")
     renderBadge("😀")
     state.depressedTicks = 0
+  }
+
+  if (state.clean == false) {
+    renderWarning("diry", 1)
+    renderBadge("🛁")
+    pet.classList.add("dirty")
+    state.mood -= 0.5
+  } else {
+    removeWarning("dirty")
+    pet.classList.remove("dirty")
   }
 
   if (state.influenza == true) {
