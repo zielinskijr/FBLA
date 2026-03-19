@@ -67,7 +67,7 @@ function petShow() {
         let randomMoney = Math.floor(Math.random() * 100);
 
         state.money += randomMoney;
-        state.earnedMoney = randomMoney;
+        state.earnedMoney += randomMoney;
     }
 
     renderDom();
