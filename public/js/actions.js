@@ -5,6 +5,7 @@ export { feed, play, bed, hospital, petShow };
 function feed() {
   if (!(state.hunger <= 0)) {
       if (state.money - 5 > 0) {
+        state.in_bed = false
         state.hunger -= 1;
         if (state.mood + 0.5 <= 10) {
             state.mood += 0.5;
@@ -20,6 +21,7 @@ function feed() {
 function play() {
     if (state.mood < 10) {
       if (state.money - 5 > 0) {
+        state.in_bed = false
         state.mood += 1;
         state.money -= 5;
         state.spentMoney += 5;
@@ -46,6 +48,7 @@ function hospital() {
         let tempStats = state;
         let randomMoney = Math.floor(Math.random() * 50);
         if (tempStats.money - randomMoney > 0)  {
+          state.in_bed = false
           state.money -= randomMoney;
           state.spentMoney += randomMoney;
           state.influenza = false
@@ -60,6 +63,7 @@ function petShow() {
     let tempStats = state;
 
     if (tempStats.hunger + 3 <= 10 && tempStats.sleep + 5 <= 10 && tempStats.mood - 2.5 >= 1) {
+        state.in_bed = false
         state.hunger += 3;
         state.sleep += 5;
         state.mood -= 2.5;
