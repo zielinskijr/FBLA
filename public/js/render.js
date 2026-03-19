@@ -44,11 +44,12 @@ function renderEnd() {
       <p id="sleep">Sleepiness: ${state.sleep}</p>
       <p id="money">Money: ${state.money}</p>
 
-      <h2>average statas</h2>
+      <h2>average stats</h2>
       <p id="avg-hunger">Hunger: ${state.avgHunger}</p>
       <p id="avg-mood">Happiness: ${state.avgMood}</p>
       <p id="avg-sleep">Sleepiness: ${state.avgSleep}</p>
-      <p id="avg-money">Money: ${state.avgMoney}</p>
+      <p id="add-money">Earned money: ${state.earnedMoney}</p>
+      <p id="spent-money">Spent money: ${state.spentMoney}</p>
   `;
 
   document.getElementById("actions").innerHTML =
