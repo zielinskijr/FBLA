@@ -16,15 +16,23 @@ if (status == "OK") {
     window.location.href = "/tutorial.html";
 }
 
-if (state.dead == false) {
+if (state.dead == false && !(state.day >= 7)) {
     mainLoop = setInterval(() => {
-     handleTicks()
-     handleWarnings()
+      if (state.day <= 6) {
+        console.log(state.day)
+        handleTicks()
+        handleWarnings()
+      if (state.dead != true) {
+        renderDom()
+      }
+      } else {
+        save("state")
+        window.location.href = "/end.html"
+      }
 
-     if (state.dead != true) {
-       renderDom()
-     }
    }, 1500);
- } else {
+ } else if (state.dead == true) {
    death();
+} else if (state.day >= 7) {
+  window.location.href = "/end.html"
 }

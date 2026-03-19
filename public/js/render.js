@@ -1,6 +1,5 @@
 import { state, info, save } from "./data.js";
-import { handleDeath } from "./death.js"
-export { renderDom, renderPet, renderWarning, removeWarning };
+export { renderDom, renderPet, renderWarning, renderEnd, removeWarning };
 
 let emoji;
 let pet;
@@ -27,8 +26,33 @@ function renderPet() {
     }
 
     document.getElementById("pet").innerHTML = `
-      <h1 id="pet-img">${emoji}</h1>
+      <h1 class="happy" id="pet-img">${emoji}</h1>
   `;
+}
+
+function renderEnd() {
+  document.getElementById("messages").innerHTML = `
+    <h2>congrats, ${state.owner}!</h2>
+    <p>you have offically made it to the end, taking care of this pet for 7 days!</p>
+    <p>here, you can view the stats of your playthrough.</p>
+    <p>if you want, you may adopt a new pet using the button at the bottom of the page</p>
+    `
+  document.getElementById("stats").innerHTML = `
+      <h2>current stats</h2>
+      <p id="hunger">Hunger: ${state.hunger}</p>
+      <p id="mood">Happiness: ${state.mood}</p>
+      <p id="sleep">Sleepiness: ${state.sleep}</p>
+      <p id="money">Money: ${state.money}</p>
+
+      <h2>average statas</h2>
+      <p id="avg-hunger">Hunger: ${state.avgHunger}</p>
+      <p id="avg-mood">Happiness: ${state.avgMood}</p>
+      <p id="avg-sleep">Sleepiness: ${state.avgSleep}</p>
+      <p id="avg-money">Money: ${state.avgMoney}</p>
+  `;
+
+  document.getElementById("actions").innerHTML =
+      `<button class="adopt" onclick="localStorage.clear(); window.location.href='/adopt.html'">adopt</button>`;
 }
 
 function renderWarning(warningID, priority) {
