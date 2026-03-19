@@ -10,7 +10,7 @@
         <main>
             <h1>adopt a pet!</h1>
             <label for="type"><h4>type: </h4></label>
-            <select name="type">
+            <select id="type" name="type">
                 <option selected></option>
                 <option value="cat">Cat</option>
                 <option value="dog">Dog</option>
@@ -20,8 +20,14 @@
             <br />
             <br />
 
-            <label for="name"><h4>name: </h4></label>
-            <input name="name" type="text" />
+            <label for="owner"><h4>your name: </h4></label>
+            <input id="owner" name="owner" type="text" />
+
+            <br />
+            <br />
+
+            <label for="name"><h4>your pet's name: </h4></label>
+            <input id="name" name="name" type="text" />
 
             <hr />
             <h4 hidden id="error-text">make sure you fill all the boxes!</h4>
