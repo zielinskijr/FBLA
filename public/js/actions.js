@@ -64,7 +64,7 @@ function petShow() {
         state.sleep += 5;
         state.mood -= 2.5;
 
-        let randomMoney = Math.floor(Math.random() * 100);
+        let randomMoney = Math.floor(Math.random() * 201) + 50;
 
         state.money += randomMoney;
         state.earnedMoney += randomMoney;
