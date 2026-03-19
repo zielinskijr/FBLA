@@ -21,6 +21,7 @@ function load() {
             money: 100,
             earnedMoney: 0,
             spentMoney: 0,
+            badge: "😀",
             key: Math.floor(Math.random() * 10),
             hungryTicks: 0,
             depressedTicks: 0,

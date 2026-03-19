@@ -1,5 +1,5 @@
 import { state, info, save } from "./data.js";
-export { renderDom, renderPet, renderWarning, renderEnd, removeWarning };
+export { renderDom, renderPet, renderBadge, renderWarning, renderEnd, removeWarning };
 
 let emoji;
 let pet;
@@ -26,7 +26,10 @@ function renderPet() {
     }
 
     document.getElementById("pet").innerHTML = `
-      <h1 class="happy" id="pet-img">${emoji}</h1>
+      <div id="pet-wrapper">
+        <p id="badge">${state.badge}</p>
+        <h1 class="happy" id="pet-img">${emoji}</h1>
+      </div>
   `;
 }
 
@@ -56,7 +59,28 @@ function renderEnd() {
       `<button class="adopt" onclick="localStorage.clear(); window.location.href='/adopt.html'">adopt</button>`;
 }
 
+function renderBadge(badge) {
+  document.getElementById("badge").innerHTML = `<p id="badge">${badge}</p>`
+
+  /*
+  if (badge == "happy") {
+    state.badge = ""
+  } else if (badge == "depressed") {
+    state.badge = ""
+  } else if (badge == "sleepy") {
+    state.badge = ""
+  } else if (badge == "asleep") {
+    state.badge = ""
+  } else if (badge == "hungry") {
+    state.badge = ""
+  } else if (badge == "sick") {
+    state.badge = 
+  }
+   */
+}
+
 function renderWarning(warningID, priority) {
+      renderBadge(warningID)
       removeWarning(warningID)
       let warning = document.createElement("h3");
       if (priority == 0) {

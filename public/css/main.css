@@ -229,3 +229,14 @@ button:hover {
         -webkit-transform: translateX(-0.25);
     }
 }
+
+#pet-wrapper {
+  position: relative;
+}
+
+#badge {
+  position: absolute;
+  top: -40%;
+  right: 42%;
+  -webkit-transform: rotate(25deg);
+}

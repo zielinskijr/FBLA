@@ -5,7 +5,11 @@ export { handleDeath, death, rollDeath };
 
 function death() {
     clearInterval(mainLoop)
-    document.getElementById("pet").innerHTML = "<h1 id='pet-img'>☠️</h1>";
+    document.getElementById("pet").innerHTML = `
+      <div id="pet-wrapper">
+        <p id="badge">💀</p>
+      <h1 class="happy" id="pet-img">🪦</h1>
+    </div>`;
     document.getElementById("stats").innerHTML = `<h3>${info.nickname} is <em>dead</em>.</h3>`;
     document.getElementById("actions").innerHTML =
         `<button class="adopt" onclick="localStorage.clear(); window.location.href='/adopt.html'">adopt</button>`;

@@ -1,5 +1,5 @@
 import { state, save } from "./data.js";
-import { renderDom } from "./render.js";
+import { renderDom, renderBadge } from "./render.js";
 export { feed, play, bed, hospital, petShow };
 
 function feed() {
@@ -37,6 +37,7 @@ function bed() {
         state.in_bed = false;
     } else {
         state.in_bed = true;
+        renderBadge("💤")
     }
 
     renderDom();
