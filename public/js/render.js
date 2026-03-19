@@ -32,7 +32,7 @@ function renderPet() {
 
 function renderEnd() {
   document.getElementById("messages").innerHTML = `
-    <h2>congrats, ${state.owner}!</h2>
+    <h2>congrats, ${info.owner}!</h2>
     <p>you have offically made it to the end, taking care of this pet for 7 days!</p>
     <p>here, you can view the stats of your playthrough.</p>
     <p>if you want, you may adopt a new pet using the button at the bottom of the page</p>
