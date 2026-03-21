@@ -29,13 +29,16 @@ function handleTicks() {
       }
 
       if (state.in_bed == false) {
+        document.getElementById("bed").innerHTML = "send to bed"
           if (state.sleep < 10) {
               state.sleep += 0.25;
           }
       } else {
           if (state.sleep > 0) {
               state.sleep -= 0.75;
+              document.getElementById("bed").innerHTML = "wake up"
               if (state.sleep < 0) {
+                  document.getElementById("bed").innerHTML = "send to bed"
                   state.sleep = 0;
                   state.in_bed = false;
               }
