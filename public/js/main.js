@@ -1,5 +1,5 @@
 import { feed, play, bed, hospital, petShow } from "./actions.js"
-import { handleTicks, handleWarnings } from "./logic.js"
+import { handleTicks, handleWarnings, handleBadges } from "./logic.js"
 import { renderDom, renderPet } from "./render.js";
 import { load, save, state } from "./data.js";
 import { death } from "./death.js"
@@ -12,6 +12,7 @@ if (status == "OK") {
     renderPet();
     renderDom();
     handleWarnings();
+    handleBadges();
 } else {
     window.location.href = "/tutorial.html";
 }
@@ -21,6 +22,7 @@ if (state.dead == false && !(state.day >= 7)) {
       if (state.day <= 6) {
         handleTicks()
         handleWarnings()
+        handleBadges();
       if (state.dead != true) {
         renderDom()
       }

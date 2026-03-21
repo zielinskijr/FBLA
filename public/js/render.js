@@ -61,26 +61,9 @@ function renderEnd() {
 
 function renderBadge(badge) {
   document.getElementById("badge").innerHTML = `<p id="badge">${badge}</p>`
-
-  /*
-  if (badge == "happy") {
-    state.badge = ""
-  } else if (badge == "depressed") {
-    state.badge = ""
-  } else if (badge == "sleepy") {
-    state.badge = ""
-  } else if (badge == "asleep") {
-    state.badge = ""
-  } else if (badge == "hungry") {
-    state.badge = ""
-  } else if (badge == "sick") {
-    state.badge = 
-  }
-   */
 }
 
 function renderWarning(warningID, priority) {
-      renderBadge(warningID)
       removeWarning(warningID)
       let warning = document.createElement("h3");
       if (priority == 0) {

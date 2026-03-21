@@ -1,7 +1,7 @@
 import { renderWarning, removeWarning, renderBadge } from "./render.js"
 import { handleDeath } from "./death.js"
 import { state } from "./data.js"
-export { handleTicks, handleWarnings, pet }
+export { handleTicks, handleWarnings, handleBadges, pet }
 
 let pet;
 
@@ -70,7 +70,7 @@ function handleWarnings() {
     handleDeath("hungry")
   } else if (state.hunger >= 7) {
     pet.classList.add("hungry")
-    renderBadge("🌮")
+
     renderWarning("hungry", 0)
   } else {
     removeWarning("hungry")
@@ -84,7 +84,6 @@ function handleWarnings() {
     handleDeath("sleepy")
   } if (state.sleep >= 7) {
     renderWarning("sleepy", 0)
-    renderBadge("🥱")
     pet.classList.add("tired")
   } else {
     removeWarning("sleepy")
@@ -98,20 +97,17 @@ function handleWarnings() {
     handleDeath("depressed")
   } else if (state.mood <= 3) {
     renderWarning("depressed", 0)
-    renderBadge("💔")
     pet.classList.remove("happy")
     pet.classList.add("depressed")
   } else {
     removeWarning("depressed")
     pet.classList.remove("depressed")
     pet.classList.add("happy")
-    renderBadge("😀")
     state.depressedTicks = 0
   }
 
   if (state.clean == false) {
     renderWarning("dirty", 1)
-    renderBadge("🛁")
     pet.classList.add("dirty")
     if (state.mood - 0.5 >= 0) {
       state.mood -= 0.5
@@ -123,7 +119,6 @@ function handleWarnings() {
 
   if (state.influenza == true) {
     renderWarning("sick", 1)
-    renderBadge("🤒")
     pet.classList.add("sick")
     state.sickTicks += 1
     handleDeath("sick")
@@ -131,5 +126,45 @@ function handleWarnings() {
     removeWarning("sick")
     pet.classList.remove("sick")
     state.sickTicks = 0
+  }
+}
+
+function handleBadges() {
+  let warningsDiv = document.getElementById("warnings").children
+  let highestPriority = null;
+  let warningPriority = null;
+  for (let i = 0; i < warningsDiv.length; i++) {
+    if (warningsDiv[i].className == "danger") {
+      highestPriority = warningsDiv[i].id
+    } else if (warningsDiv[i].className == "warning") {
+      warningPriority = warningsDiv[i].id
+    }
+  }
+
+  if (highestPriority == null) {
+    highestPriority = warningPriority;
+    if (highestPriority == null) {
+      highestPriority = "happy"
+    }
+  }
+
+  if (highestPriority == "hungry") {
+    renderBadge("🌮")
+  } else if (highestPriority == "sleepy") {
+    if (state.in_bed == false) {
+      renderBadge("🥱")
+    } else {
+      renderBadge("💤")
+    }
+  } else if (highestPriority == "depressed") {
+    renderBadge("💔")
+  } else if (highestPriority == "dirty") {
+    renderBadge("🛁")
+  } else if (highestPriority == "sick") {
+    renderBadge("🤒")
+  } else if (highestPriority == "happy") {
+    renderBadge("😄")
+  } else if (state.dead == true) {
+    renderBadge("💀")
   }
 }

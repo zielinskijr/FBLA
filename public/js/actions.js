@@ -51,7 +51,6 @@ function bed() {
         state.in_bed = false;
     } else {
         state.in_bed = true;
-        renderBadge("💤")
     }
 
     renderDom();
