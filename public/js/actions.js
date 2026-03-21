@@ -36,7 +36,9 @@ function clean() {
   if (state.clean == false) {
     if (state.mood - 3 > 0) {
       state.clean = true
-      state.mood += 2
+      if (state.mood + 2 <= 10) {
+        state.mood += 2
+      }
     }
 
     renderDom();

@@ -52,7 +52,6 @@ function handleTicks() {
       }
 
       if (state.clean == true) {
-        console.log(state.clean)
         if (Math.floor(Math.random() * 20) == state.key) {
           state.clean = false
         }
@@ -114,7 +113,9 @@ function handleWarnings() {
     renderWarning("dirty", 1)
     renderBadge("🛁")
     pet.classList.add("dirty")
-    state.mood -= 0.5
+    if (state.mood - 0.5 >= 0) {
+      state.mood -= 0.5
+    }
   } else {
     removeWarning("dirty")
     pet.classList.remove("dirty")

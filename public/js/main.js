@@ -19,7 +19,6 @@ if (status == "OK") {
 if (state.dead == false && !(state.day >= 7)) {
     mainLoop = setInterval(() => {
       if (state.day <= 6) {
-        console.log(state.day)
         handleTicks()
         handleWarnings()
       if (state.dead != true) {
