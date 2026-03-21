@@ -34,9 +34,9 @@ function play() {
 
 function clean() {
   if (state.clean == false) {
-    if (state.happiness - 3 > 0) {
+    if (state.mood - 3 > 0) {
       state.clean = true
-      state.happiness += 2
+      state.mood += 2
     }
 
     renderDom();

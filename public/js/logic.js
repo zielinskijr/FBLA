@@ -111,7 +111,7 @@ function handleWarnings() {
   }
 
   if (state.clean == false) {
-    renderWarning("diry", 1)
+    renderWarning("dirty", 1)
     renderBadge("🛁")
     pet.classList.add("dirty")
     state.mood -= 0.5
