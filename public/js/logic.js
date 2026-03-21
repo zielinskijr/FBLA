@@ -52,6 +52,7 @@ function handleTicks() {
       }
 
       if (state.clean == true) {
+        console.log(state.clean)
         if (Math.floor(Math.random() * 20) == state.key) {
           state.clean = false
         }

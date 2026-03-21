@@ -30,6 +30,7 @@ function load() {
             in_bed: false,
             dead: false,
             influenza: false,
+            clean: true,
         };
     }
 
