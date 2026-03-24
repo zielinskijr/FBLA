@@ -12,7 +12,7 @@ function renderDom() {
         <p id="hunger">Hunger: ${state.hunger}</p>
         <p id="mood">Happiness: ${state.mood}</p>
         <p id="sleep">Sleepiness: ${state.sleep}</p>
-        <p id="money">Money: ${state.money}</p>
+        <p id="money">Money: ${state.money}$</p>
     `;
 }
 
@@ -45,14 +45,19 @@ function renderEnd() {
       <p id="hunger">Hunger: ${state.hunger}</p>
       <p id="mood">Happiness: ${state.mood}</p>
       <p id="sleep">Sleepiness: ${state.sleep}</p>
-      <p id="money">Money: ${state.money}</p>
+      <p id="money">Money: ${state.money}$</p>
 
       <h2>average stats</h2>
       <p id="avg-hunger">Hunger: ${state.avgHunger}</p>
       <p id="avg-mood">Happiness: ${state.avgMood}</p>
       <p id="avg-sleep">Sleepiness: ${state.avgSleep}</p>
-      <p id="add-money">Earned money: ${state.earnedMoney}</p>
-      <p id="spent-money">Spent money: ${state.spentMoney}</p>
+      <p id="add-money">Earned money: ${state.earnedMoney}$</p>
+      <p id="spent-money">Spent money: ${state.spentMoney}$</p>
+
+      <h2>bill breakdown</h2>
+      <p id="food-spent">Food: ${state.foodMoney}$</p>
+      <p id="toy-money">Toys: ${state.playMoney}$</p>
+      <p id="vet-money">Vet Money: ${state.vetMoney}$</p>
   `;
 
   document.getElementById("actions").innerHTML =

@@ -12,6 +12,7 @@ function feed() {
         }
         state.money -= 5;
         state.spentMoney += 5;
+        state.foodMoney += 5
       }
     }
     renderDom();
@@ -25,6 +26,7 @@ function play() {
         state.mood += 1;
         state.money -= 5;
         state.spentMoney += 5;
+        state.playMoney += 5
       }
     }
 
@@ -65,6 +67,7 @@ function hospital() {
           state.in_bed = false
           state.money -= randomMoney;
           state.spentMoney += randomMoney;
+          state.vetMoney += randomMoney;
           state.influenza = false
         }
     }
