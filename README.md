@@ -24,9 +24,9 @@ it's going to be mainly written in HTML, CSS, and JS.
 - [x] have customization on the pet (name the pet, choose cat or dog, etc.)
 - [x] pet care features (feed, play, rest, clean, etc.)
 - [x] reactions based on care level
-- [ ] a total of care related expenses
-- [ ] add in some cleaning to the pet
-- [ ] (optional) savings goals or earning systems
+- [x] a total of care related expenses
+- [x] add in some cleaning to the pet
+- [x] (optional) savings goals or earning systems
 
 ### whole big ass thing to work on
 
